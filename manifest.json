@@ -1,0 +1,13 @@
+{
+  "name": "DS Bridge",
+  "id": "ds-bridge-figma-plugin",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "documentAccess": "dynamic-page",
+  "editorType": ["figma"],
+  "networkAccess": {
+    "allowedDomains": ["none"]
+  },
+  "capabilities": ["variables", "codegen"]
+}

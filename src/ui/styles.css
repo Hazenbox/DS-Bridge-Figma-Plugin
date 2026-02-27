@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--figma-color-text);
+  background: var(--figma-color-bg);
+}
+
+.container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header h1 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--figma-color-text);
+}
+
+.header .version {
+  font-size: 11px;
+  color: var(--figma-color-text-secondary);
+}
+
+/* File Upload */
+.file-upload {
+  border: 2px dashed var(--figma-color-border);
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.file-upload:hover {
+  border-color: var(--figma-color-border-brand);
+  background-color: var(--figma-color-bg-hover);
+}
+
+.file-upload.dragover {
+  border-color: var(--figma-color-border-brand);
+  background-color: var(--figma-color-bg-brand-tertiary);
+}
+
+.file-upload input {
+  display: none;
+}
+
+.file-upload p {
+  color: var(--figma-color-text-secondary);
+  margin-top: 8px;
+}
+
+.file-upload .icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+/* Preview Card */
+.preview {
+  background: var(--figma-color-bg-secondary);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.preview h2 {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--figma-color-text);
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.preview-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.preview-item .label {
+  font-size: 11px;
+  color: var(--figma-color-text-secondary);
+}
+
+.preview-item .value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--figma-color-text);
+}
+
+/* Progress */
+.progress-section {
+  padding: 16px;
+  background: var(--figma-color-bg-secondary);
+  border-radius: 8px;
+}
+
+.progress-message {
+  font-size: 12px;
+  color: var(--figma-color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 4px;
+  background: var(--figma-color-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--figma-color-bg-brand);
+  transition: width 0.3s ease;
+}
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+.button-primary {
+  background: var(--figma-color-bg-brand);
+  color: var(--figma-color-text-onbrand);
+}
+
+.button-primary:hover:not(:disabled) {
+  background: var(--figma-color-bg-brand-hover);
+}
+
+.button-secondary {
+  background: var(--figma-color-bg-secondary);
+  color: var(--figma-color-text);
+  border: 1px solid var(--figma-color-border);
+}
+
+.button-secondary:hover:not(:disabled) {
+  background: var(--figma-color-bg-hover);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+/* Results */
+.results {
+  background: var(--figma-color-bg-success-tertiary);
+  border: 1px solid var(--figma-color-border-success);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.results h3 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--figma-color-text-success);
+  margin-bottom: 8px;
+}
+
+.results ul {
+  list-style: none;
+}
+
+.results li {
+  font-size: 12px;
+  color: var(--figma-color-text);
+  padding: 2px 0;
+}
+
+/* Error */
+.error {
+  background: var(--figma-color-bg-danger-tertiary);
+  border: 1px solid var(--figma-color-border-danger);
+  border-radius: 8px;
+  padding: 16px;
+  color: var(--figma-color-text-danger);
+  font-size: 12px;
+}
+
+/* File info */
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--figma-color-bg-secondary);
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.file-info .name {
+  flex: 1;
+  color: var(--figma-color-text);
+  font-weight: 500;
+}
+
+.file-info .remove {
+  color: var(--figma-color-text-secondary);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.file-info .remove:hover {
+  background: var(--figma-color-bg-hover);
+  color: var(--figma-color-text-danger);
+}

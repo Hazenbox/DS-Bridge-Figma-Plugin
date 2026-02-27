@@ -8,6 +8,5 @@
   "editorType": ["figma"],
   "networkAccess": {
     "allowedDomains": ["none"]
-  },
-  "capabilities": ["variables", "codegen"]
+  }
 }

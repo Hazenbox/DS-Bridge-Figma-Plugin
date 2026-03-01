@@ -126,6 +126,9 @@ async function addComponentProperties(
         // 2. Find the slot that this boolean controls (by linkedBooleanProperty)
         const linkedSlot = slots.find(s => s.linkedBooleanProperty === prop.name);
         if (linkedSlot) {
+          let linkedCount = 0;
+          let missingCount = 0;
+          
           // 3. Link the boolean property to the visibility of the corresponding layer in each variant
           for (const component of components) {
             const layer = component.findOne(n => n.name === linkedSlot.name);
@@ -139,8 +142,21 @@ async function addComponentProperties(
                 ...layer.componentPropertyReferences,
                 visible: propertyId
               };
+              linkedCount++;
+            } else {
+              missingCount++;
             }
           }
+          
+          // Log validation results
+          if (missingCount > 0) {
+            console.warn(
+              `Boolean property "${prop.name}": linked ${linkedCount}/${components.length} variants. ` +
+              `${missingCount} variants missing layer "${linkedSlot.name}" (may be icon-only variants).`
+            );
+          }
+        } else {
+          console.warn(`Boolean property "${prop.name}" has no linkedBooleanProperty in slots.`);
         }
       } else if (prop.type === "TEXT") {
         // Add text property and capture the exact property ID
@@ -149,6 +165,8 @@ async function addComponentProperties(
           "TEXT", 
           prop.defaultValue as string
         );
+        
+        let linkedCount = 0;
         
         // Find text layers named "Label" and link them
         for (const component of components) {
@@ -160,7 +178,16 @@ async function addComponentProperties(
               ...textLayer.componentPropertyReferences,
               characters: propertyId
             };
+            linkedCount++;
           }
+        }
+        
+        // Log if not all variants have the text layer (expected for icon-only)
+        if (linkedCount < components.length) {
+          console.log(
+            `Text property "${prop.name}": linked ${linkedCount}/${components.length} variants ` +
+            `(icon-only variants don't have Label).`
+          );
         }
       } else if (prop.type === "INSTANCE_SWAP") {
         // For instance swap, we need to find icon components to use as default
@@ -180,6 +207,8 @@ async function addComponentProperties(
         // Add instance swap property (requires a default component ID)
         if (defaultComponentId) {
           componentSet.addComponentProperty(prop.name, "INSTANCE_SWAP", defaultComponentId);
+        } else {
+          console.warn(`Instance swap property "${prop.name}": no default component found.`);
         }
       }
     } catch (error) {
@@ -200,6 +229,10 @@ async function createSingleComponent(
   const component = figma.createComponent();
   component.name = variant.name || componentDef.name;
 
+  // Check if this is an icon-only variant (Size starts with "Icon")
+  const isIconOnly = variant.properties?.Size?.startsWith("Icon") || 
+                     variant.tokenBindings?.hideLabel === "true";
+
   // Find root slot
   const rootSlot = componentDef.slots.find((s) => s.isRoot);
 
@@ -215,9 +248,21 @@ async function createSingleComponent(
     // Create child nodes
     const childSlots = componentDef.slots.filter((s) => s.parent === rootSlot.id);
     for (const childSlot of childSlots) {
+      // Skip Label slot for icon-only variants
+      if (isIconOnly && childSlot.type === "TEXT" && 
+          (childSlot.name === "Label" || childSlot.id === "label")) {
+        continue;
+      }
+      
       const childNode = await createSlotNode(childSlot, variableMap, variant.tokenBindings);
       if (childNode) {
         component.appendChild(childNode);
+        
+        // For icon-only variants, show the left icon by default
+        if (isIconOnly && childSlot.type === "ICON" && 
+            (childSlot.name === "Left Icon" || childSlot.id === "iconLeft")) {
+          childNode.visible = true;
+        }
       }
     }
   } else {
@@ -520,14 +565,54 @@ async function applySlotToText(
   variableMap: Map<string, Variable>,
   variantTokenBindings?: Record<string, string>
 ): Promise<void> {
-  // Load Inter Medium font (primary button font)
-  try {
-    await figma.loadFontAsync({ family: "Inter", style: "Medium" });
-    textNode.fontName = { family: "Inter", style: "Medium" };
-  } catch {
-    // Fallback to Regular if Medium not available
-    await figma.loadFontAsync({ family: "Inter", style: "Regular" });
-    textNode.fontName = { family: "Inter", style: "Regular" };
+  // Get font family from variable binding or use Geist as default (design system font)
+  let fontFamily = "Geist";
+  const fontFamilyVarName = slot.variableBindings.fontFamily;
+  if (fontFamilyVarName) {
+    const fontVar = variableMap.get(fontFamilyVarName);
+    if (fontVar) {
+      try {
+        const collection = await figma.variables.getVariableCollectionByIdAsync(fontVar.variableCollectionId);
+        if (collection) {
+          const modeId = collection.defaultModeId;
+          const value = fontVar.valuesByMode[modeId];
+          if (typeof value === "string") {
+            fontFamily = value;
+          }
+        }
+      } catch (error) {
+        console.warn("Could not resolve font family variable:", error);
+      }
+    }
+  }
+  
+  // Load the correct font with fallback chain
+  let fontLoaded = false;
+  const fontStyles = ["Medium", "Regular"];
+  
+  for (const style of fontStyles) {
+    if (fontLoaded) break;
+    try {
+      await figma.loadFontAsync({ family: fontFamily, style });
+      textNode.fontName = { family: fontFamily, style };
+      fontLoaded = true;
+    } catch {
+      // Try next style
+    }
+  }
+  
+  // Ultimate fallback to Inter if preferred font not available
+  if (!fontLoaded) {
+    for (const style of fontStyles) {
+      try {
+        await figma.loadFontAsync({ family: "Inter", style });
+        textNode.fontName = { family: "Inter", style };
+        fontLoaded = true;
+        break;
+      } catch {
+        // Try next style
+      }
+    }
   }
 
   // Set text content
@@ -558,6 +643,8 @@ async function applySlotToText(
 
   // Apply typography variable bindings (fontSize, fontWeight, lineHeight, letterSpacing)
   const typographyFields = ["fontSize", "fontWeight", "lineHeight", "letterSpacing"];
+  
+  // First apply slot default bindings
   for (const [fieldName, variableName] of Object.entries(slot.variableBindings)) {
     if (typographyFields.includes(fieldName) && typeof variableName === "string") {
       const variable = variableMap.get(variableName);
@@ -566,6 +653,23 @@ async function applySlotToText(
           textNode.setBoundVariable(fieldName as VariableBindableTextField, variable);
         } catch (error) {
           console.warn(`Could not bind ${fieldName} to text node:`, error);
+        }
+      }
+    }
+  }
+  
+  // CRITICAL: Override with variant-specific typography bindings
+  // This ensures each button size gets its correct fontSize, fontWeight, etc.
+  if (variantTokenBindings) {
+    for (const [fieldName, variableName] of Object.entries(variantTokenBindings)) {
+      if (typographyFields.includes(fieldName) && typeof variableName === "string") {
+        const variable = variableMap.get(variableName);
+        if (variable) {
+          try {
+            textNode.setBoundVariable(fieldName as VariableBindableTextField, variable);
+          } catch (error) {
+            console.warn(`Could not bind variant ${fieldName} to text node:`, error);
+          }
         }
       }
     }

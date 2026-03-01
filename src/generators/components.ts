@@ -73,6 +73,18 @@ async function createComponentSet(
       componentSet.description = componentDef.description;
     }
 
+    // Configure ComponentSet layout for organized grid
+    componentSet.layoutMode = "HORIZONTAL";
+    componentSet.layoutWrap = "WRAP";
+    componentSet.itemSpacing = 24;
+    componentSet.counterAxisSpacing = 24;
+    componentSet.paddingLeft = 40;
+    componentSet.paddingRight = 40;
+    componentSet.paddingTop = 40;
+    componentSet.paddingBottom = 40;
+    componentSet.primaryAxisSizingMode = "AUTO";
+    componentSet.counterAxisSizingMode = "AUTO";
+
     return componentSet;
   }
 
@@ -100,10 +112,15 @@ async function createSingleComponent(
     // Apply root slot properties to the component
     await applySlotToFrame(component, rootSlot, variableMap);
 
+    // Apply per-variant token bindings (colors based on variant type)
+    if (variant.tokenBindings && Object.keys(variant.tokenBindings).length > 0) {
+      await applyVariantTokenBindings(component, variant.tokenBindings, variableMap);
+    }
+
     // Create child nodes
     const childSlots = componentDef.slots.filter((s) => s.parent === rootSlot.id);
     for (const childSlot of childSlots) {
-      const childNode = await createSlotNode(childSlot, variableMap);
+      const childNode = await createSlotNode(childSlot, variableMap, variant.tokenBindings);
       if (childNode) {
         component.appendChild(childNode);
       }
@@ -128,7 +145,8 @@ async function createSingleComponent(
  */
 async function createSlotNode(
   slot: FigmaPluginSlot,
-  variableMap: Map<string, Variable>
+  variableMap: Map<string, Variable>,
+  variantTokenBindings?: Record<string, string>
 ): Promise<SceneNode | null> {
   let node: SceneNode;
 
@@ -140,7 +158,7 @@ async function createSlotNode(
 
     case "TEXT":
       node = figma.createText();
-      await applySlotToText(node as TextNode, slot, variableMap);
+      await applySlotToText(node as TextNode, slot, variableMap, variantTokenBindings);
       break;
 
     case "RECTANGLE":
@@ -205,18 +223,34 @@ async function applySlotToFrame(
 async function applySlotToText(
   textNode: TextNode,
   slot: FigmaPluginSlot,
-  variableMap: Map<string, Variable>
+  variableMap: Map<string, Variable>,
+  variantTokenBindings?: Record<string, string>
 ): Promise<void> {
-  // Load default font
-  await figma.loadFontAsync({ family: "Inter", style: "Regular" });
+  // Load Inter Medium font (primary button font)
+  try {
+    await figma.loadFontAsync({ family: "Inter", style: "Medium" });
+    textNode.fontName = { family: "Inter", style: "Medium" };
+  } catch {
+    // Fallback to Regular if Medium not available
+    await figma.loadFontAsync({ family: "Inter", style: "Regular" });
+    textNode.fontName = { family: "Inter", style: "Regular" };
+  }
 
   // Set text content
   const text = (slot.defaults?.text as string) || slot.name;
   textNode.characters = text;
 
+  // Determine text fill variable - prefer variant-specific, then slot default
+  let textFillVariable: string | undefined;
+  if (variantTokenBindings?.textFill) {
+    textFillVariable = variantTokenBindings.textFill;
+  } else if (slot.variableBindings.textFill) {
+    textFillVariable = slot.variableBindings.textFill;
+  }
+
   // Apply text fill variable
-  if (slot.variableBindings.textFill) {
-    const variable = variableMap.get(slot.variableBindings.textFill);
+  if (textFillVariable) {
+    const variable = variableMap.get(textFillVariable);
     if (variable) {
       const solidPaint = figma.util.solidPaint("#000000");
       const boundPaint = figma.variables.setBoundVariableForPaint(
@@ -227,23 +261,85 @@ async function applySlotToText(
       textNode.fills = [boundPaint];
     }
   }
+
+  // Apply typography variable bindings (fontSize, fontWeight, lineHeight)
+  for (const [variableName, fieldName] of Object.entries(slot.variableBindings)) {
+    if (fieldName === "fontSize" || fieldName === "fontWeight" || fieldName === "lineHeight") {
+      const variable = variableMap.get(variableName);
+      if (variable) {
+        try {
+          textNode.setBoundVariable(fieldName as VariableBindableTextField, variable);
+        } catch (error) {
+          console.warn(`Could not bind ${fieldName} to text node:`, error);
+        }
+      }
+    }
+  }
 }
 
 /**
  * Apply variable bindings to a frame
+ * The bindings object is keyed by variable name, value is field name(s)
  */
 async function applyVariableBindings(
   frame: FrameNode | ComponentNode,
-  bindings: Record<string, string>,
+  bindings: Record<string, string | string[]>,
   variableMap: Map<string, Variable>
 ): Promise<void> {
-  for (const [codePath, fieldName] of Object.entries(bindings)) {
-    const variable = variableMap.get(codePath);
-    if (!variable) continue;
+  for (const [variableName, fieldNameOrArray] of Object.entries(bindings)) {
+    const variable = variableMap.get(variableName);
+    if (!variable) {
+      console.warn(`Variable not found: ${variableName}`);
+      continue;
+    }
+
+    // Handle array of fields (for symmetric properties like padding-inline)
+    const fieldNames = Array.isArray(fieldNameOrArray) ? fieldNameOrArray : [fieldNameOrArray];
+
+    for (const fieldName of fieldNames) {
+      try {
+        // Handle color bindings separately
+        if (fieldName === "fill") {
+          const solidPaint = figma.util.solidPaint("#000000");
+          const boundPaint = figma.variables.setBoundVariableForPaint(
+            solidPaint,
+            "color",
+            variable
+          );
+          frame.fills = [boundPaint];
+        } else if (fieldName === "stroke") {
+          const solidPaint = figma.util.solidPaint("#000000");
+          const boundPaint = figma.variables.setBoundVariableForPaint(
+            solidPaint,
+            "color",
+            variable
+          );
+          frame.strokes = [boundPaint];
+          frame.strokeWeight = 1;
+        } else if (isBindableField(fieldName)) {
+          // Numeric bindings
+          frame.setBoundVariable(fieldName as VariableBindableNodeField, variable);
+        }
+      } catch (error) {
+        console.warn(`Could not bind variable ${variableName} to ${fieldName}:`, error);
+      }
+    }
+  }
+}
+
+/**
+ * Apply per-variant token bindings (colors based on variant type)
+ */
+async function applyVariantTokenBindings(
+  frame: FrameNode | ComponentNode,
+  tokenBindings: Record<string, string>,
+  variableMap: Map<string, Variable>
+): Promise<void> {
+  for (const [fieldName, variableName] of Object.entries(tokenBindings)) {
+    const variable = variableMap.get(variableName);
 
     try {
-      // Handle color bindings separately
-      if (fieldName === "fill") {
+      if (fieldName === "fill" && variable) {
         const solidPaint = figma.util.solidPaint("#000000");
         const boundPaint = figma.variables.setBoundVariableForPaint(
           solidPaint,
@@ -251,7 +347,10 @@ async function applyVariableBindings(
           variable
         );
         frame.fills = [boundPaint];
-      } else if (fieldName === "stroke") {
+      } else if (fieldName === "fill" && !variable) {
+        // Transparent fill (for outline, ghost, link variants)
+        frame.fills = [];
+      } else if (fieldName === "stroke" && variable) {
         const solidPaint = figma.util.solidPaint("#000000");
         const boundPaint = figma.variables.setBoundVariableForPaint(
           solidPaint,
@@ -259,18 +358,18 @@ async function applyVariableBindings(
           variable
         );
         frame.strokes = [boundPaint];
-      } else if (isBindableField(fieldName)) {
-        // Numeric bindings
-        frame.setBoundVariable(fieldName as VariableBindableNodeField, variable);
+        frame.strokeWeight = 1;
+      } else if (fieldName === "opacity" && variable) {
+        frame.setBoundVariable("opacity", variable);
       }
     } catch (error) {
-      console.warn(`Could not bind variable to ${fieldName}:`, error);
+      console.warn(`Could not apply variant binding ${fieldName}:`, error);
     }
   }
 }
 
 /**
- * Check if a field can be bound to a variable
+ * Check if a field can be bound to a variable on a frame
  */
 function isBindableField(field: string): boolean {
   const bindableFields = [
@@ -295,6 +394,9 @@ function isBindableField(field: string): boolean {
   ];
   return bindableFields.includes(field);
 }
+
+// Type for text node bindable fields
+type VariableBindableTextField = "fontSize" | "fontWeight" | "lineHeight" | "letterSpacing" | "paragraphSpacing" | "paragraphIndent";
 
 /**
  * Apply default values to a frame

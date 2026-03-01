@@ -48,7 +48,12 @@ export async function createVariableCollections(
       for (const varDef of collDef.variables) {
         try {
           const variable = await createVariable(collection, varDef, modeIds, collDef.modes);
-          variableMap.set(varDef.codePath, variable);
+          // Store by variable name (primary key for bindings)
+          variableMap.set(varDef.name, variable);
+          // Also store by codePath as fallback for legacy references
+          if (varDef.codePath && varDef.codePath !== varDef.name) {
+            variableMap.set(varDef.codePath, variable);
+          }
         } catch (error) {
           console.error(`Failed to create variable "${varDef.name}":`, error);
         }

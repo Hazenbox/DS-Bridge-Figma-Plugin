@@ -166,11 +166,14 @@ export function hslToRgb(h: number, s: number, l: number): RGB {
 /**
  * Parse oklch() string
  * Format: oklch(L C H) or oklch(L C H / A)
+ * Lightness can be 0-1 or 0%-100%
+ * Alpha can be 0-1 or 0%-100%
  */
 function parseOklchString(value: string): RGBA {
-  // Match oklch(0.5 0.2 180) or oklch(0.5 0.2 180 / 0.5) or oklch(50% 0.2 180)
+  // Match oklch(0.5 0.2 180) or oklch(0.5 0.2 180 / 0.5) or oklch(50% 0.2 180 / 50%)
+  // Capture the % separately for lightness and alpha
   const match = value.match(
-    /oklch\(\s*([\d.]+)%?\s+([\d.]+)\s+([\d.]+)\s*(?:\/\s*([\d.]+)%?)?\s*\)/i
+    /oklch\(\s*([\d.]+)(%?)\s+([\d.]+)\s+([\d.]+)\s*(?:\/\s*([\d.]+)(%?)?)?\s*\)/i
   );
 
   if (!match) {
@@ -178,23 +181,37 @@ function parseOklchString(value: string): RGBA {
   }
 
   const lStr = match[1];
-  const cStr = match[2];
-  const hStr = match[3];
-  const aStr = match[4];
+  const lIsPercent = match[2] === "%";
+  const cStr = match[3];
+  const hStr = match[4];
+  const aStr = match[5];
+  const aIsPercent = match[6] === "%";
 
   // Convert percentage to decimal for lightness
   let lightness = parseFloat(lStr);
-  if (value.includes("%")) {
+  if (lIsPercent) {
     lightness = lightness / 100;
   }
+
+  // Parse alpha with percentage handling
+  let alpha = 1;
+  if (aStr) {
+    alpha = parseFloat(aStr);
+    if (aIsPercent) {
+      alpha = alpha / 100;
+    }
+  }
+
+  // Clamp alpha to 0-1 range
+  alpha = Math.max(0, Math.min(1, alpha));
 
   const rgb = oklchToRgb(lightness, parseFloat(cStr), parseFloat(hStr));
 
   return {
-    r: rgb.r,
-    g: rgb.g,
-    b: rgb.b,
-    a: aStr ? parseFloat(aStr) : 1,
+    r: Math.max(0, Math.min(1, rgb.r)),
+    g: Math.max(0, Math.min(1, rgb.g)),
+    b: Math.max(0, Math.min(1, rgb.b)),
+    a: alpha,
   };
 }
 

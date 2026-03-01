@@ -5,13 +5,14 @@ const path = require("path");
 const isWatch = process.argv.includes("--watch");
 
 // Build plugin code (runs in Figma sandbox - NO DOM APIs)
+// Figma uses an older JS engine, avoid object spread
 const codeConfig = {
   entryPoints: ["src/code.ts"],
   bundle: true,
   outfile: "dist/code.js",
-  target: "es2020",
+  target: ["es2017"],
   format: "iife",
-  minify: !isWatch,
+  minify: false,
   sourcemap: isWatch ? "inline" : false,
 };
 

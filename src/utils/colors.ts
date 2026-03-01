@@ -89,17 +89,20 @@ function parseRgbString(value: string): RGBA {
     return { r: 0, g: 0, b: 0, a: 1 };
   }
 
-  const [, r, g, b, a] = match;
+  const rStr = match[1];
+  const gStr = match[2];
+  const bStr = match[3];
+  const aStr = match[4];
 
   // Check if values are percentages
   const isPercent = value.includes("%");
   const divisor = isPercent ? 100 : 255;
 
   return {
-    r: parseFloat(r) / divisor,
-    g: parseFloat(g) / divisor,
-    b: parseFloat(b) / divisor,
-    a: a ? parseFloat(a) : 1,
+    r: parseFloat(rStr) / divisor,
+    g: parseFloat(gStr) / divisor,
+    b: parseFloat(bStr) / divisor,
+    a: aStr ? parseFloat(aStr) : 1,
   };
 }
 
@@ -115,12 +118,17 @@ function parseHslString(value: string): RGBA {
     return { r: 0, g: 0, b: 0, a: 1 };
   }
 
-  const [, h, s, l, a] = match;
-  const rgb = hslToRgb(parseFloat(h), parseFloat(s) / 100, parseFloat(l) / 100);
+  const hStr = match[1];
+  const sStr = match[2];
+  const lStr = match[3];
+  const aStr = match[4];
+  const rgb = hslToRgb(parseFloat(hStr), parseFloat(sStr) / 100, parseFloat(lStr) / 100);
 
   return {
-    ...rgb,
-    a: a ? parseFloat(a) : 1,
+    r: rgb.r,
+    g: rgb.g,
+    b: rgb.b,
+    a: aStr ? parseFloat(aStr) : 1,
   };
 }
 
@@ -169,19 +177,24 @@ function parseOklchString(value: string): RGBA {
     return { r: 0, g: 0, b: 0, a: 1 };
   }
 
-  let [, l, c, h, a] = match;
+  const lStr = match[1];
+  const cStr = match[2];
+  const hStr = match[3];
+  const aStr = match[4];
 
   // Convert percentage to decimal for lightness
-  let lightness = parseFloat(l);
+  let lightness = parseFloat(lStr);
   if (value.includes("%")) {
     lightness = lightness / 100;
   }
 
-  const rgb = oklchToRgb(lightness, parseFloat(c), parseFloat(h));
+  const rgb = oklchToRgb(lightness, parseFloat(cStr), parseFloat(hStr));
 
   return {
-    ...rgb,
-    a: a ? parseFloat(a) : 1,
+    r: rgb.r,
+    g: rgb.g,
+    b: rgb.b,
+    a: aStr ? parseFloat(aStr) : 1,
   };
 }
 

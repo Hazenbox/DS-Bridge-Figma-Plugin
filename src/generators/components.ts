@@ -245,8 +245,24 @@ async function createSingleComponent(
       await applyVariantTokenBindings(component, variant.tokenBindings, variableMap);
     }
 
-    // Create child nodes
-    const childSlots = componentDef.slots.filter((s) => s.parent === rootSlot.id);
+    // Create child nodes - maintain deterministic order from spec
+    // Slots are ordered: iconLeft, label, iconRight in the spec
+    const childSlots = componentDef.slots
+      .filter((s) => s.parent === rootSlot.id)
+      .sort((a, b) => {
+        // Explicit ordering for button slots to ensure consistent structure
+        const slotOrder: Record<string, number> = {
+          "iconLeft": 0,
+          "Left Icon": 0,
+          "label": 1,
+          "Label": 1,
+          "iconRight": 2,
+          "Right Icon": 2,
+        };
+        const orderA = slotOrder[a.id] ?? slotOrder[a.name] ?? 99;
+        const orderB = slotOrder[b.id] ?? slotOrder[b.name] ?? 99;
+        return orderA - orderB;
+      });
     for (const childSlot of childSlots) {
       // Skip Label slot for icon-only variants
       if (isIconOnly && childSlot.type === "TEXT" && 
@@ -465,7 +481,8 @@ async function createIconSlot(
 
 /**
  * Apply a color variable to an icon instance
- * This recursively finds all vector nodes and applies the color to their fills
+ * This recursively finds all vector nodes and applies the color to their fills.
+ * For rasterized/image icons, logs a warning since color cannot be applied.
  */
 async function applyColorToIconInstance(
   instance: InstanceNode,
@@ -479,15 +496,26 @@ async function applyColorToIconInstance(
     colorVariable
   );
 
+  let appliedCount = 0;
+  let imageCount = 0;
+
   // Find all vector-like nodes within the instance and apply the color
   const applyToNode = (node: SceneNode) => {
     try {
-      // Apply to nodes that have fills (vectors, rectangles, ellipses, etc.)
+      // Check for image fills (rasterized icons can't have color applied)
       if ("fills" in node && Array.isArray(node.fills) && node.fills.length > 0) {
-        // Only apply if the current fill is a solid color (not images, gradients, etc.)
         const currentFills = node.fills as readonly Paint[];
+        
+        // Check if this is an image fill (rasterized icon)
+        if (currentFills.some(f => f.type === "IMAGE")) {
+          imageCount++;
+          return; // Can't apply color to images
+        }
+        
+        // Only apply if the current fill is a solid color
         if (currentFills.some(f => f.type === "SOLID")) {
           (node as GeometryMixin).fills = [boundPaint];
+          appliedCount++;
         }
       }
       
@@ -496,6 +524,7 @@ async function applyColorToIconInstance(
         const currentStrokes = node.strokes as readonly Paint[];
         if (currentStrokes.some(s => s.type === "SOLID")) {
           (node as GeometryMixin).strokes = [boundPaint];
+          appliedCount++;
         }
       }
     } catch (error) {
@@ -516,6 +545,14 @@ async function applyColorToIconInstance(
   // Apply to the instance itself and all its children
   applyToNode(instance);
   processChildren(instance);
+  
+  // Log warning if icon appears to be rasterized
+  if (imageCount > 0 && appliedCount === 0) {
+    console.warn(
+      `Icon "${instance.name}" contains ${imageCount} image fill(s) - color variable cannot be applied. ` +
+      `Use vector icons for dynamic coloring.`
+    );
+  }
 }
 
 /**

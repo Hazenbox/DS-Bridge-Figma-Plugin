@@ -102,6 +102,9 @@ async function createComponentSet(
 /**
  * Add component properties to a ComponentSet
  * Creates boolean, text, and instance swap properties
+ * 
+ * IMPORTANT: Boolean properties control layer visibility via componentPropertyReferences.
+ * The property ID returned from addComponentProperty() must be used exactly as-is.
  */
 async function addComponentProperties(
   componentSet: ComponentSetNode,
@@ -112,61 +115,55 @@ async function addComponentProperties(
   for (const prop of properties) {
     try {
       if (prop.type === "BOOLEAN") {
-        // Add boolean property to the component set
-        componentSet.addComponentProperty(prop.name, "BOOLEAN", prop.defaultValue as boolean);
+        // 1. Add boolean property and capture the exact property ID
+        // addComponentProperty returns the ID with a unique suffix like "Show Left Icon#0:0"
+        const propertyId = componentSet.addComponentProperty(
+          prop.name, 
+          "BOOLEAN", 
+          prop.defaultValue as boolean
+        );
         
-        // Find the slot that this boolean controls (by linkedBooleanProperty)
+        // 2. Find the slot that this boolean controls (by linkedBooleanProperty)
         const linkedSlot = slots.find(s => s.linkedBooleanProperty === prop.name);
         if (linkedSlot) {
-          // Link the boolean property to the visibility of the corresponding layer in each component
+          // 3. Link the boolean property to the visibility of the corresponding layer in each variant
           for (const component of components) {
             const layer = component.findOne(n => n.name === linkedSlot.name);
             if (layer) {
               // Set initial visibility based on default value
               layer.visible = prop.defaultValue as boolean;
               
-              // Expose the layer's visibility as the component property
-              try {
-                // Get the property ID we just created
-                const propDefs = componentSet.componentPropertyDefinitions;
-                const propId = Object.keys(propDefs).find(key => propDefs[key].type === "BOOLEAN" && key.includes(prop.name.replace(/ /g, "_")));
-                if (propId) {
-                  layer.componentPropertyReferences = {
-                    ...layer.componentPropertyReferences,
-                    visible: propId
-                  };
-                }
-              } catch (linkError) {
-                console.warn(`Could not link boolean property "${prop.name}" to layer "${linkedSlot.name}":`, linkError);
-              }
+              // Link the layer's visibility to the component property
+              // This makes the boolean toggle in the properties panel control this layer
+              layer.componentPropertyReferences = {
+                ...layer.componentPropertyReferences,
+                visible: propertyId
+              };
             }
           }
         }
       } else if (prop.type === "TEXT") {
-        // Add text property
-        componentSet.addComponentProperty(prop.name, "TEXT", prop.defaultValue as string);
+        // Add text property and capture the exact property ID
+        const propertyId = componentSet.addComponentProperty(
+          prop.name, 
+          "TEXT", 
+          prop.defaultValue as string
+        );
         
         // Find text layers named "Label" and link them
         for (const component of components) {
-          const textLayer = component.findOne(n => n.type === "TEXT" && (n.name === "Label" || n.name === prop.name)) as TextNode | null;
+          const textLayer = component.findOne(
+            n => n.type === "TEXT" && (n.name === "Label" || n.name === prop.name)
+          ) as TextNode | null;
           if (textLayer) {
-            try {
-              const propDefs = componentSet.componentPropertyDefinitions;
-              const propId = Object.keys(propDefs).find(key => propDefs[key].type === "TEXT" && key.includes(prop.name.replace(/ /g, "_")));
-              if (propId) {
-                textLayer.componentPropertyReferences = {
-                  ...textLayer.componentPropertyReferences,
-                  characters: propId
-                };
-              }
-            } catch (linkError) {
-              console.warn(`Could not link text property "${prop.name}" to text layer:`, linkError);
-            }
+            textLayer.componentPropertyReferences = {
+              ...textLayer.componentPropertyReferences,
+              characters: propertyId
+            };
           }
         }
       } else if (prop.type === "INSTANCE_SWAP") {
-        // For instance swap, we need to find the preferred values (icon components)
-        // and create the property with those as options
+        // For instance swap, we need to find icon components to use as default
         const preferredValues = prop.preferredValues || [];
         
         // Try to find icon components in the document
@@ -268,7 +265,8 @@ async function createSlotNode(
       break;
 
     case "ICON":
-      node = await createIconSlot(slot, variableMap);
+      // Pass textFill from variant token bindings so icon color matches button text
+      node = await createIconSlot(slot, variableMap, variantTokenBindings?.textFill);
       break;
 
     default:
@@ -283,10 +281,12 @@ async function createSlotNode(
 
 /**
  * Create an icon slot - either as an instance of an icon component or a placeholder frame
+ * Icons inherit their color from the button's textFill variable to match the label color
  */
 async function createIconSlot(
   slot: FigmaPluginSlot,
-  variableMap: Map<string, Variable>
+  variableMap: Map<string, Variable>,
+  textFillVariableName?: string
 ): Promise<FrameNode | InstanceNode> {
   const width = (slot.defaults?.width as number) || 16;
   const height = (slot.defaults?.height as number) || 16;
@@ -348,6 +348,14 @@ async function createIconSlot(
     iconInstance.resize(width, height);
     iconInstance.name = slot.name;
     
+    // Apply textFill color variable to icon so it matches button text color
+    if (textFillVariableName) {
+      const colorVariable = variableMap.get(textFillVariableName);
+      if (colorVariable) {
+        await applyColorToIconInstance(iconInstance, colorVariable);
+      }
+    }
+    
     // Set visibility based on isOptional (default to hidden if optional)
     if (slot.isOptional) {
       iconInstance.visible = false;
@@ -370,8 +378,22 @@ async function createIconSlot(
   frame.resize(width, height);
   frame.name = slot.name;
   
-  // Style as a visible placeholder (light gray with icon indicator)
-  frame.fills = [{ type: "SOLID", color: { r: 0.9, g: 0.9, b: 0.9 } }];
+  // Apply textFill color variable to placeholder frame
+  if (textFillVariableName) {
+    const colorVariable = variableMap.get(textFillVariableName);
+    if (colorVariable) {
+      const solidPaint = figma.util.solidPaint("#000000");
+      const boundPaint = figma.variables.setBoundVariableForPaint(
+        solidPaint,
+        "color",
+        colorVariable
+      );
+      frame.fills = [boundPaint];
+    }
+  } else {
+    // Style as a visible placeholder (light gray with icon indicator)
+    frame.fills = [{ type: "SOLID", color: { r: 0.9, g: 0.9, b: 0.9 } }];
+  }
   frame.cornerRadius = 2;
   
   // Fixed sizing for icons
@@ -394,6 +416,61 @@ async function createIconSlot(
   }
   
   return frame;
+}
+
+/**
+ * Apply a color variable to an icon instance
+ * This recursively finds all vector nodes and applies the color to their fills
+ */
+async function applyColorToIconInstance(
+  instance: InstanceNode,
+  colorVariable: Variable
+): Promise<void> {
+  // Create the bound paint once
+  const solidPaint = figma.util.solidPaint("#000000");
+  const boundPaint = figma.variables.setBoundVariableForPaint(
+    solidPaint,
+    "color",
+    colorVariable
+  );
+
+  // Find all vector-like nodes within the instance and apply the color
+  const applyToNode = (node: SceneNode) => {
+    try {
+      // Apply to nodes that have fills (vectors, rectangles, ellipses, etc.)
+      if ("fills" in node && Array.isArray(node.fills) && node.fills.length > 0) {
+        // Only apply if the current fill is a solid color (not images, gradients, etc.)
+        const currentFills = node.fills as readonly Paint[];
+        if (currentFills.some(f => f.type === "SOLID")) {
+          (node as GeometryMixin).fills = [boundPaint];
+        }
+      }
+      
+      // Apply to strokes as well for outlined icons
+      if ("strokes" in node && Array.isArray(node.strokes) && node.strokes.length > 0) {
+        const currentStrokes = node.strokes as readonly Paint[];
+        if (currentStrokes.some(s => s.type === "SOLID")) {
+          (node as GeometryMixin).strokes = [boundPaint];
+        }
+      }
+    } catch (error) {
+      // Some nodes may not support fill/stroke modifications
+    }
+  };
+
+  // Recursively process all children
+  const processChildren = (parent: SceneNode) => {
+    if ("children" in parent) {
+      for (const child of (parent as ChildrenMixin).children) {
+        applyToNode(child);
+        processChildren(child);
+      }
+    }
+  };
+
+  // Apply to the instance itself and all its children
+  applyToNode(instance);
+  processChildren(instance);
 }
 
 /**

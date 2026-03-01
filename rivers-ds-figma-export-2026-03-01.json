@@ -1,0 +1,5836 @@
+{
+  "version": "1.0.0",
+  "exportedAt": "2026-03-01T19:35:08.139Z",
+  "source": "rivers-ds",
+  "variableCollections": [
+    {
+      "id": "rivers-ds-density",
+      "name": "Density",
+      "modes": [
+        "Compact",
+        "Default",
+        "Spacious"
+      ],
+      "variables": [
+        {
+          "id": "rivers-ds-density/control-height",
+          "name": "density/control-height",
+          "type": "FLOAT",
+          "description": "Density token: controlHeight",
+          "valuesByMode": {
+            "Compact": 32,
+            "Default": 40,
+            "Spacious": 48
+          },
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codePath": "--control-height"
+        },
+        {
+          "id": "rivers-ds-density/control-height-sm",
+          "name": "density/control-height-sm",
+          "type": "FLOAT",
+          "description": "Density token: controlHeightSm",
+          "valuesByMode": {
+            "Compact": 24,
+            "Default": 32,
+            "Spacious": 40
+          },
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codePath": "--control-height-sm"
+        },
+        {
+          "id": "rivers-ds-density/control-height-lg",
+          "name": "density/control-height-lg",
+          "type": "FLOAT",
+          "description": "Density token: controlHeightLg",
+          "valuesByMode": {
+            "Compact": 40,
+            "Default": 48,
+            "Spacious": 56
+          },
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codePath": "--control-height-lg"
+        },
+        {
+          "id": "rivers-ds-density/table-row-height",
+          "name": "density/table-row-height",
+          "type": "FLOAT",
+          "description": "Density token: tableRowHeight",
+          "valuesByMode": {
+            "Compact": 36,
+            "Default": 44,
+            "Spacious": 56
+          },
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codePath": "--table-row-height"
+        },
+        {
+          "id": "rivers-ds-density/stack-gap",
+          "name": "density/stack-gap",
+          "type": "FLOAT",
+          "description": "Density token: stackGap",
+          "valuesByMode": {
+            "Compact": 8,
+            "Default": 12,
+            "Spacious": 16
+          },
+          "scopes": [
+            "GAP"
+          ],
+          "codePath": "--stack-gap"
+        },
+        {
+          "id": "rivers-ds-density/section-gap",
+          "name": "density/section-gap",
+          "type": "FLOAT",
+          "description": "Density token: sectionGap",
+          "valuesByMode": {
+            "Compact": 20,
+            "Default": 24,
+            "Spacious": 32
+          },
+          "scopes": [
+            "GAP"
+          ],
+          "codePath": "--section-gap"
+        },
+        {
+          "id": "rivers-ds-density/inline-gap",
+          "name": "density/inline-gap",
+          "type": "FLOAT",
+          "description": "Density token: inlineGap",
+          "valuesByMode": {
+            "Compact": 6,
+            "Default": 8,
+            "Spacious": 12
+          },
+          "scopes": [
+            "GAP"
+          ],
+          "codePath": "--inline-gap"
+        },
+        {
+          "id": "rivers-ds-density/inset-xs",
+          "name": "density/inset-xs",
+          "type": "FLOAT",
+          "description": "Density token: insetXs",
+          "valuesByMode": {
+            "Compact": 4,
+            "Default": 6,
+            "Spacious": 8
+          },
+          "scopes": [
+            "GAP"
+          ],
+          "codePath": "--inset-xs"
+        },
+        {
+          "id": "rivers-ds-density/inset-sm",
+          "name": "density/inset-sm",
+          "type": "FLOAT",
+          "description": "Density token: insetSm",
+          "valuesByMode": {
+            "Compact": 6,
+            "Default": 8,
+            "Spacious": 12
+          },
+          "scopes": [
+            "GAP"
+          ],
+          "codePath": "--inset-sm"
+        },
+        {
+          "id": "rivers-ds-density/inset-md",
+          "name": "density/inset-md",
+          "type": "FLOAT",
+          "description": "Density token: insetMd",
+          "valuesByMode": {
+            "Compact": 8,
+            "Default": 12,
+            "Spacious": 16
+          },
+          "scopes": [
+            "GAP"
+          ],
+          "codePath": "--inset-md"
+        },
+        {
+          "id": "rivers-ds-density/inset-lg",
+          "name": "density/inset-lg",
+          "type": "FLOAT",
+          "description": "Density token: insetLg",
+          "valuesByMode": {
+            "Compact": 12,
+            "Default": 16,
+            "Spacious": 24
+          },
+          "scopes": [
+            "GAP"
+          ],
+          "codePath": "--inset-lg"
+        },
+        {
+          "id": "rivers-ds-density/inset-xl",
+          "name": "density/inset-xl",
+          "type": "FLOAT",
+          "description": "Density token: insetXl",
+          "valuesByMode": {
+            "Compact": 16,
+            "Default": 24,
+            "Spacious": 32
+          },
+          "scopes": [
+            "GAP"
+          ],
+          "codePath": "--inset-xl"
+        },
+        {
+          "id": "rivers-ds-density/line-height-body",
+          "name": "density/line-height-body",
+          "type": "FLOAT",
+          "description": "Density token: lineHeightBody",
+          "valuesByMode": {
+            "Compact": 1.25,
+            "Default": 1.43,
+            "Spacious": 1.57
+          },
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "codePath": "--line-height-body"
+        },
+        {
+          "id": "rivers-ds-density/line-height-heading",
+          "name": "density/line-height-heading",
+          "type": "FLOAT",
+          "description": "Density token: lineHeightHeading",
+          "valuesByMode": {
+            "Compact": 1.1,
+            "Default": 1.25,
+            "Spacious": 1.35
+          },
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "codePath": "--line-height-heading"
+        },
+        {
+          "id": "rivers-ds-density/text-margin-after-h1",
+          "name": "density/text-margin-after-h1",
+          "type": "FLOAT",
+          "description": "Density token: textMarginAfterH1",
+          "valuesByMode": {
+            "Compact": 12,
+            "Default": 20,
+            "Spacious": 28
+          },
+          "scopes": [
+            "GAP"
+          ],
+          "codePath": "--text-margin-after-h1"
+        },
+        {
+          "id": "rivers-ds-density/text-margin-after-h2",
+          "name": "density/text-margin-after-h2",
+          "type": "FLOAT",
+          "description": "Density token: textMarginAfterH2",
+          "valuesByMode": {
+            "Compact": 8,
+            "Default": 16,
+            "Spacious": 24
+          },
+          "scopes": [
+            "GAP"
+          ],
+          "codePath": "--text-margin-after-h2"
+        },
+        {
+          "id": "rivers-ds-density/text-margin-after-h3",
+          "name": "density/text-margin-after-h3",
+          "type": "FLOAT",
+          "description": "Density token: textMarginAfterH3",
+          "valuesByMode": {
+            "Compact": 6,
+            "Default": 12,
+            "Spacious": 16
+          },
+          "scopes": [
+            "GAP"
+          ],
+          "codePath": "--text-margin-after-h3"
+        },
+        {
+          "id": "rivers-ds-density/text-margin-after-p",
+          "name": "density/text-margin-after-p",
+          "type": "FLOAT",
+          "description": "Density token: textMarginAfterP",
+          "valuesByMode": {
+            "Compact": 8,
+            "Default": 16,
+            "Spacious": 24
+          },
+          "scopes": [
+            "GAP"
+          ],
+          "codePath": "--text-margin-after-p"
+        },
+        {
+          "id": "rivers-ds-density/radius-sm",
+          "name": "density/radius-sm",
+          "type": "FLOAT",
+          "description": "Density token: radiusSm",
+          "valuesByMode": {
+            "Compact": 2,
+            "Default": 4,
+            "Spacious": 6
+          },
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codePath": "--radius-sm"
+        },
+        {
+          "id": "rivers-ds-density/radius-md",
+          "name": "density/radius-md",
+          "type": "FLOAT",
+          "description": "Density token: radiusMd",
+          "valuesByMode": {
+            "Compact": 4,
+            "Default": 6,
+            "Spacious": 8
+          },
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codePath": "--radius-md"
+        },
+        {
+          "id": "rivers-ds-density/radius-lg",
+          "name": "density/radius-lg",
+          "type": "FLOAT",
+          "description": "Density token: radiusLg",
+          "valuesByMode": {
+            "Compact": 6,
+            "Default": 8,
+            "Spacious": 12
+          },
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codePath": "--radius-lg"
+        },
+        {
+          "id": "rivers-ds-density/radius-xl",
+          "name": "density/radius-xl",
+          "type": "FLOAT",
+          "description": "Density token: radiusXl",
+          "valuesByMode": {
+            "Compact": 8,
+            "Default": 12,
+            "Spacious": 16
+          },
+          "scopes": [
+            "CORNER_RADIUS"
+          ],
+          "codePath": "--radius-xl"
+        },
+        {
+          "id": "rivers-ds-density/icon-size-sm",
+          "name": "density/icon-size-sm",
+          "type": "FLOAT",
+          "description": "Density token: iconSizeSm",
+          "valuesByMode": {
+            "Compact": 12,
+            "Default": 14,
+            "Spacious": 16
+          },
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codePath": "--icon-size-sm"
+        },
+        {
+          "id": "rivers-ds-density/icon-size",
+          "name": "density/icon-size",
+          "type": "FLOAT",
+          "description": "Density token: iconSize",
+          "valuesByMode": {
+            "Compact": 14,
+            "Default": 16,
+            "Spacious": 18
+          },
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codePath": "--icon-size"
+        },
+        {
+          "id": "rivers-ds-density/icon-size-lg",
+          "name": "density/icon-size-lg",
+          "type": "FLOAT",
+          "description": "Density token: iconSizeLg",
+          "valuesByMode": {
+            "Compact": 16,
+            "Default": 18,
+            "Spacious": 20
+          },
+          "scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "codePath": "--icon-size-lg"
+        }
+      ]
+    },
+    {
+      "id": "rivers-ds-colors",
+      "name": "Colors",
+      "modes": [
+        "Light",
+        "Dark"
+      ],
+      "variables": [
+        {
+          "id": "rivers-ds-colors/primary",
+          "name": "colors/primary",
+          "type": "COLOR",
+          "description": "Color token: primary",
+          "valuesByMode": {
+            "Light": "oklch(0.205 0 0)",
+            "Dark": "oklch(0.922 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--primary"
+        },
+        {
+          "id": "rivers-ds-colors/primary-foreground",
+          "name": "colors/primary-foreground",
+          "type": "COLOR",
+          "description": "Color token: primaryForeground",
+          "valuesByMode": {
+            "Light": "oklch(0.985 0 0)",
+            "Dark": "oklch(0.205 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--primary-foreground"
+        },
+        {
+          "id": "rivers-ds-colors/secondary",
+          "name": "colors/secondary",
+          "type": "COLOR",
+          "description": "Color token: secondary",
+          "valuesByMode": {
+            "Light": "oklch(0.97 0 0)",
+            "Dark": "oklch(0.269 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--secondary"
+        },
+        {
+          "id": "rivers-ds-colors/secondary-foreground",
+          "name": "colors/secondary-foreground",
+          "type": "COLOR",
+          "description": "Color token: secondaryForeground",
+          "valuesByMode": {
+            "Light": "oklch(0.205 0 0)",
+            "Dark": "oklch(0.985 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--secondary-foreground"
+        },
+        {
+          "id": "rivers-ds-colors/accent",
+          "name": "colors/accent",
+          "type": "COLOR",
+          "description": "Color token: accent",
+          "valuesByMode": {
+            "Light": "oklch(0.97 0 0)",
+            "Dark": "oklch(0.269 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--accent"
+        },
+        {
+          "id": "rivers-ds-colors/accent-foreground",
+          "name": "colors/accent-foreground",
+          "type": "COLOR",
+          "description": "Color token: accentForeground",
+          "valuesByMode": {
+            "Light": "oklch(0.205 0 0)",
+            "Dark": "oklch(0.985 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--accent-foreground"
+        },
+        {
+          "id": "rivers-ds-colors/ring",
+          "name": "colors/ring",
+          "type": "COLOR",
+          "description": "Color token: ring",
+          "valuesByMode": {
+            "Light": "oklch(0.708 0 0)",
+            "Dark": "oklch(0.556 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--ring"
+        },
+        {
+          "id": "rivers-ds-colors/background",
+          "name": "colors/background",
+          "type": "COLOR",
+          "description": "Neutral color: background",
+          "valuesByMode": {
+            "Light": "oklch(1 0 0)",
+            "Dark": "oklch(0.145 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--background"
+        },
+        {
+          "id": "rivers-ds-colors/foreground",
+          "name": "colors/foreground",
+          "type": "COLOR",
+          "description": "Neutral color: foreground",
+          "valuesByMode": {
+            "Light": "oklch(0.145 0 0)",
+            "Dark": "oklch(0.985 0 0)"
+          },
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codePath": "--foreground"
+        },
+        {
+          "id": "rivers-ds-colors/card",
+          "name": "colors/card",
+          "type": "COLOR",
+          "description": "Neutral color: card",
+          "valuesByMode": {
+            "Light": "oklch(1 0 0)",
+            "Dark": "oklch(0.205 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--card"
+        },
+        {
+          "id": "rivers-ds-colors/card-foreground",
+          "name": "colors/card-foreground",
+          "type": "COLOR",
+          "description": "Neutral color: cardForeground",
+          "valuesByMode": {
+            "Light": "oklch(0.145 0 0)",
+            "Dark": "oklch(0.985 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--card-foreground"
+        },
+        {
+          "id": "rivers-ds-colors/popover",
+          "name": "colors/popover",
+          "type": "COLOR",
+          "description": "Neutral color: popover",
+          "valuesByMode": {
+            "Light": "oklch(1 0 0)",
+            "Dark": "oklch(0.205 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--popover"
+        },
+        {
+          "id": "rivers-ds-colors/popover-foreground",
+          "name": "colors/popover-foreground",
+          "type": "COLOR",
+          "description": "Neutral color: popoverForeground",
+          "valuesByMode": {
+            "Light": "oklch(0.145 0 0)",
+            "Dark": "oklch(0.985 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--popover-foreground"
+        },
+        {
+          "id": "rivers-ds-colors/muted",
+          "name": "colors/muted",
+          "type": "COLOR",
+          "description": "Neutral color: muted",
+          "valuesByMode": {
+            "Light": "oklch(0.97 0 0)",
+            "Dark": "oklch(0.269 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--muted"
+        },
+        {
+          "id": "rivers-ds-colors/muted-foreground",
+          "name": "colors/muted-foreground",
+          "type": "COLOR",
+          "description": "Neutral color: mutedForeground",
+          "valuesByMode": {
+            "Light": "oklch(0.556 0 0)",
+            "Dark": "oklch(0.708 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--muted-foreground"
+        },
+        {
+          "id": "rivers-ds-colors/border",
+          "name": "colors/border",
+          "type": "COLOR",
+          "description": "Neutral color: border",
+          "valuesByMode": {
+            "Light": "oklch(0.922 0 0)",
+            "Dark": "oklch(1 0 0 / 10%)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--border"
+        },
+        {
+          "id": "rivers-ds-colors/input",
+          "name": "colors/input",
+          "type": "COLOR",
+          "description": "Neutral color: input",
+          "valuesByMode": {
+            "Light": "oklch(0.922 0 0)",
+            "Dark": "oklch(1 0 0 / 15%)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--input"
+        },
+        {
+          "id": "rivers-ds-colors/success",
+          "name": "colors/success",
+          "type": "COLOR",
+          "description": "Semantic color: success",
+          "valuesByMode": {
+            "Light": "oklch(0.55 0.17 162)",
+            "Dark": "oklch(0.65 0.17 162)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--success"
+        },
+        {
+          "id": "rivers-ds-colors/success-foreground",
+          "name": "colors/success-foreground",
+          "type": "COLOR",
+          "description": "Semantic color: successForeground",
+          "valuesByMode": {
+            "Light": "oklch(0.985 0 0)",
+            "Dark": "oklch(0.145 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--success-foreground"
+        },
+        {
+          "id": "rivers-ds-colors/warning",
+          "name": "colors/warning",
+          "type": "COLOR",
+          "description": "Semantic color: warning",
+          "valuesByMode": {
+            "Light": "oklch(0.75 0.18 85)",
+            "Dark": "oklch(0.80 0.15 85)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--warning"
+        },
+        {
+          "id": "rivers-ds-colors/warning-foreground",
+          "name": "colors/warning-foreground",
+          "type": "COLOR",
+          "description": "Semantic color: warningForeground",
+          "valuesByMode": {
+            "Light": "oklch(0.145 0 0)",
+            "Dark": "oklch(0.145 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--warning-foreground"
+        },
+        {
+          "id": "rivers-ds-colors/info",
+          "name": "colors/info",
+          "type": "COLOR",
+          "description": "Semantic color: info",
+          "valuesByMode": {
+            "Light": "oklch(0.55 0.20 250)",
+            "Dark": "oklch(0.65 0.18 250)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--info"
+        },
+        {
+          "id": "rivers-ds-colors/info-foreground",
+          "name": "colors/info-foreground",
+          "type": "COLOR",
+          "description": "Semantic color: infoForeground",
+          "valuesByMode": {
+            "Light": "oklch(0.985 0 0)",
+            "Dark": "oklch(0.145 0 0)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--info-foreground"
+        },
+        {
+          "id": "rivers-ds-colors/destructive",
+          "name": "colors/destructive",
+          "type": "COLOR",
+          "description": "Destructive/danger action color",
+          "valuesByMode": {
+            "Light": "oklch(0.577 0.245 27.325)",
+            "Dark": "oklch(0.704 0.191 22.216)"
+          },
+          "scopes": [
+            "ALL_FILLS"
+          ],
+          "codePath": "--destructive"
+        },
+        {
+          "id": "rivers-ds-colors/destructive-foreground",
+          "name": "colors/destructive-foreground",
+          "type": "COLOR",
+          "description": "Destructive foreground color",
+          "valuesByMode": {
+            "Light": "oklch(0.985 0 0)",
+            "Dark": "oklch(0.985 0 0)"
+          },
+          "scopes": [
+            "TEXT_FILL"
+          ],
+          "codePath": "--destructive-foreground"
+        }
+      ]
+    },
+    {
+      "id": "rivers-ds-spacing",
+      "name": "Spacing",
+      "modes": [
+        "Default"
+      ],
+      "variables": [
+        {
+          "id": "rivers-ds-spacing/0",
+          "name": "spacing/0",
+          "type": "FLOAT",
+          "description": "Spacing: 0px",
+          "valuesByMode": {
+            "Default": 0
+          },
+          "scopes": [
+            "ALL_SCOPES"
+          ],
+          "codePath": "--spacing-0"
+        },
+        {
+          "id": "rivers-ds-spacing/1",
+          "name": "spacing/1",
+          "type": "FLOAT",
+          "description": "Spacing: 4px",
+          "valuesByMode": {
+            "Default": 4
+          },
+          "scopes": [
+            "ALL_SCOPES"
+          ],
+          "codePath": "--spacing-1"
+        },
+        {
+          "id": "rivers-ds-spacing/2",
+          "name": "spacing/2",
+          "type": "FLOAT",
+          "description": "Spacing: 8px",
+          "valuesByMode": {
+            "Default": 8
+          },
+          "scopes": [
+            "ALL_SCOPES"
+          ],
+          "codePath": "--spacing-2"
+        },
+        {
+          "id": "rivers-ds-spacing/3",
+          "name": "spacing/3",
+          "type": "FLOAT",
+          "description": "Spacing: 12px",
+          "valuesByMode": {
+            "Default": 12
+          },
+          "scopes": [
+            "ALL_SCOPES"
+          ],
+          "codePath": "--spacing-3"
+        },
+        {
+          "id": "rivers-ds-spacing/4",
+          "name": "spacing/4",
+          "type": "FLOAT",
+          "description": "Spacing: 16px",
+          "valuesByMode": {
+            "Default": 16
+          },
+          "scopes": [
+            "ALL_SCOPES"
+          ],
+          "codePath": "--spacing-4"
+        },
+        {
+          "id": "rivers-ds-spacing/5",
+          "name": "spacing/5",
+          "type": "FLOAT",
+          "description": "Spacing: 20px",
+          "valuesByMode": {
+            "Default": 20
+          },
+          "scopes": [
+            "ALL_SCOPES"
+          ],
+          "codePath": "--spacing-5"
+        },
+        {
+          "id": "rivers-ds-spacing/6",
+          "name": "spacing/6",
+          "type": "FLOAT",
+          "description": "Spacing: 24px",
+          "valuesByMode": {
+            "Default": 24
+          },
+          "scopes": [
+            "ALL_SCOPES"
+          ],
+          "codePath": "--spacing-6"
+        },
+        {
+          "id": "rivers-ds-spacing/8",
+          "name": "spacing/8",
+          "type": "FLOAT",
+          "description": "Spacing: 32px",
+          "valuesByMode": {
+            "Default": 32
+          },
+          "scopes": [
+            "ALL_SCOPES"
+          ],
+          "codePath": "--spacing-8"
+        },
+        {
+          "id": "rivers-ds-spacing/10",
+          "name": "spacing/10",
+          "type": "FLOAT",
+          "description": "Spacing: 40px",
+          "valuesByMode": {
+            "Default": 40
+          },
+          "scopes": [
+            "ALL_SCOPES"
+          ],
+          "codePath": "--spacing-10"
+        },
+        {
+          "id": "rivers-ds-spacing/12",
+          "name": "spacing/12",
+          "type": "FLOAT",
+          "description": "Spacing: 48px",
+          "valuesByMode": {
+            "Default": 48
+          },
+          "scopes": [
+            "ALL_SCOPES"
+          ],
+          "codePath": "--spacing-12"
+        },
+        {
+          "id": "rivers-ds-spacing/16",
+          "name": "spacing/16",
+          "type": "FLOAT",
+          "description": "Spacing: 64px",
+          "valuesByMode": {
+            "Default": 64
+          },
+          "scopes": [
+            "ALL_SCOPES"
+          ],
+          "codePath": "--spacing-16"
+        },
+        {
+          "id": "rivers-ds-spacing/20",
+          "name": "spacing/20",
+          "type": "FLOAT",
+          "description": "Spacing: 80px",
+          "valuesByMode": {
+            "Default": 80
+          },
+          "scopes": [
+            "ALL_SCOPES"
+          ],
+          "codePath": "--spacing-20"
+        },
+        {
+          "id": "rivers-ds-spacing/0-5",
+          "name": "spacing/0-5",
+          "type": "FLOAT",
+          "description": "Spacing: 2px",
+          "valuesByMode": {
+            "Default": 2
+          },
+          "scopes": [
+            "ALL_SCOPES"
+          ],
+          "codePath": "--spacing-0-5"
+        }
+      ]
+    },
+    {
+      "id": "rivers-ds-typography",
+      "name": "Typography",
+      "modes": [
+        "Default"
+      ],
+      "variables": [
+        {
+          "id": "rivers-ds-typography/fontSize-xs",
+          "name": "typography/fontSize-xs",
+          "type": "FLOAT",
+          "description": "Font size: 11px",
+          "valuesByMode": {
+            "Default": 11
+          },
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codePath": "--font-size-xs"
+        },
+        {
+          "id": "rivers-ds-typography/fontSize-sm",
+          "name": "typography/fontSize-sm",
+          "type": "FLOAT",
+          "description": "Font size: 12px",
+          "valuesByMode": {
+            "Default": 12
+          },
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codePath": "--font-size-sm"
+        },
+        {
+          "id": "rivers-ds-typography/fontSize-base",
+          "name": "typography/fontSize-base",
+          "type": "FLOAT",
+          "description": "Font size: 14px",
+          "valuesByMode": {
+            "Default": 14
+          },
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codePath": "--font-size-base"
+        },
+        {
+          "id": "rivers-ds-typography/fontSize-md",
+          "name": "typography/fontSize-md",
+          "type": "FLOAT",
+          "description": "Font size: 16px",
+          "valuesByMode": {
+            "Default": 16
+          },
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codePath": "--font-size-md"
+        },
+        {
+          "id": "rivers-ds-typography/fontSize-lg",
+          "name": "typography/fontSize-lg",
+          "type": "FLOAT",
+          "description": "Font size: 18px",
+          "valuesByMode": {
+            "Default": 18
+          },
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codePath": "--font-size-lg"
+        },
+        {
+          "id": "rivers-ds-typography/fontSize-xl",
+          "name": "typography/fontSize-xl",
+          "type": "FLOAT",
+          "description": "Font size: 24px",
+          "valuesByMode": {
+            "Default": 24
+          },
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codePath": "--font-size-xl"
+        },
+        {
+          "id": "rivers-ds-typography/fontSize-2xl",
+          "name": "typography/fontSize-2xl",
+          "type": "FLOAT",
+          "description": "Font size: 32px",
+          "valuesByMode": {
+            "Default": 32
+          },
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codePath": "--font-size-2xl"
+        },
+        {
+          "id": "rivers-ds-typography/fontSize-3xl",
+          "name": "typography/fontSize-3xl",
+          "type": "FLOAT",
+          "description": "Font size: 40px",
+          "valuesByMode": {
+            "Default": 40
+          },
+          "scopes": [
+            "FONT_SIZE"
+          ],
+          "codePath": "--font-size-3xl"
+        },
+        {
+          "id": "rivers-ds-typography/fontWeight-light",
+          "name": "typography/fontWeight-light",
+          "type": "FLOAT",
+          "description": "Font weight: 300",
+          "valuesByMode": {
+            "Default": 300
+          },
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "codePath": "--font-weight-light"
+        },
+        {
+          "id": "rivers-ds-typography/fontWeight-regular",
+          "name": "typography/fontWeight-regular",
+          "type": "FLOAT",
+          "description": "Font weight: 400",
+          "valuesByMode": {
+            "Default": 400
+          },
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "codePath": "--font-weight-regular"
+        },
+        {
+          "id": "rivers-ds-typography/fontWeight-medium",
+          "name": "typography/fontWeight-medium",
+          "type": "FLOAT",
+          "description": "Font weight: 500",
+          "valuesByMode": {
+            "Default": 500
+          },
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "codePath": "--font-weight-medium"
+        },
+        {
+          "id": "rivers-ds-typography/fontWeight-semibold",
+          "name": "typography/fontWeight-semibold",
+          "type": "FLOAT",
+          "description": "Font weight: 600",
+          "valuesByMode": {
+            "Default": 600
+          },
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "codePath": "--font-weight-semibold"
+        },
+        {
+          "id": "rivers-ds-typography/fontWeight-bold",
+          "name": "typography/fontWeight-bold",
+          "type": "FLOAT",
+          "description": "Font weight: 700",
+          "valuesByMode": {
+            "Default": 700
+          },
+          "scopes": [
+            "FONT_WEIGHT"
+          ],
+          "codePath": "--font-weight-bold"
+        },
+        {
+          "id": "rivers-ds-typography/lineHeight-tight",
+          "name": "typography/lineHeight-tight",
+          "type": "FLOAT",
+          "description": "Line height: 1.25",
+          "valuesByMode": {
+            "Default": 1.25
+          },
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "codePath": "--line-height-tight"
+        },
+        {
+          "id": "rivers-ds-typography/lineHeight-normal",
+          "name": "typography/lineHeight-normal",
+          "type": "FLOAT",
+          "description": "Line height: 1.5",
+          "valuesByMode": {
+            "Default": 1.5
+          },
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "codePath": "--line-height-normal"
+        },
+        {
+          "id": "rivers-ds-typography/lineHeight-relaxed",
+          "name": "typography/lineHeight-relaxed",
+          "type": "FLOAT",
+          "description": "Line height: 1.75",
+          "valuesByMode": {
+            "Default": 1.75
+          },
+          "scopes": [
+            "LINE_HEIGHT"
+          ],
+          "codePath": "--line-height-relaxed"
+        },
+        {
+          "id": "rivers-ds-typography/letterSpacing-tighter",
+          "name": "typography/letterSpacing-tighter",
+          "type": "FLOAT",
+          "description": "Letter spacing: -0.05em",
+          "valuesByMode": {
+            "Default": -5
+          },
+          "scopes": [
+            "LETTER_SPACING"
+          ],
+          "codePath": "--letter-spacing-tighter"
+        },
+        {
+          "id": "rivers-ds-typography/letterSpacing-tight",
+          "name": "typography/letterSpacing-tight",
+          "type": "FLOAT",
+          "description": "Letter spacing: -0.025em",
+          "valuesByMode": {
+            "Default": -2.5
+          },
+          "scopes": [
+            "LETTER_SPACING"
+          ],
+          "codePath": "--letter-spacing-tight"
+        },
+        {
+          "id": "rivers-ds-typography/letterSpacing-normal",
+          "name": "typography/letterSpacing-normal",
+          "type": "FLOAT",
+          "description": "Letter spacing: 0",
+          "valuesByMode": {
+            "Default": 0
+          },
+          "scopes": [
+            "LETTER_SPACING"
+          ],
+          "codePath": "--letter-spacing-normal"
+        },
+        {
+          "id": "rivers-ds-typography/letterSpacing-wide",
+          "name": "typography/letterSpacing-wide",
+          "type": "FLOAT",
+          "description": "Letter spacing: 0.025em",
+          "valuesByMode": {
+            "Default": 2.5
+          },
+          "scopes": [
+            "LETTER_SPACING"
+          ],
+          "codePath": "--letter-spacing-wide"
+        },
+        {
+          "id": "rivers-ds-typography/letterSpacing-wider",
+          "name": "typography/letterSpacing-wider",
+          "type": "FLOAT",
+          "description": "Letter spacing: 0.05em",
+          "valuesByMode": {
+            "Default": 5
+          },
+          "scopes": [
+            "LETTER_SPACING"
+          ],
+          "codePath": "--letter-spacing-wider"
+        }
+      ]
+    },
+    {
+      "id": "rivers-ds-fonts",
+      "name": "Fonts",
+      "modes": [
+        "Default"
+      ],
+      "variables": [
+        {
+          "id": "rivers-ds-fonts/ui",
+          "name": "fonts/ui",
+          "type": "STRING",
+          "description": "UI / body font family",
+          "valuesByMode": {
+            "Default": "Geist"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-ui"
+        },
+        {
+          "id": "rivers-ds-fonts/ui-geist",
+          "name": "fonts/ui-geist",
+          "type": "STRING",
+          "description": "ui preset: Geist",
+          "valuesByMode": {
+            "Default": "Geist"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-ui-geist"
+        },
+        {
+          "id": "rivers-ds-fonts/ui-inter",
+          "name": "fonts/ui-inter",
+          "type": "STRING",
+          "description": "ui preset: Inter",
+          "valuesByMode": {
+            "Default": "Inter"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-ui-inter"
+        },
+        {
+          "id": "rivers-ds-fonts/ui-roboto",
+          "name": "fonts/ui-roboto",
+          "type": "STRING",
+          "description": "ui preset: Roboto",
+          "valuesByMode": {
+            "Default": "Roboto"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-ui-roboto"
+        },
+        {
+          "id": "rivers-ds-fonts/ui-open-sans",
+          "name": "fonts/ui-open-sans",
+          "type": "STRING",
+          "description": "ui preset: Open Sans",
+          "valuesByMode": {
+            "Default": "Open Sans"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-ui-open-sans"
+        },
+        {
+          "id": "rivers-ds-fonts/ui-nunito",
+          "name": "fonts/ui-nunito",
+          "type": "STRING",
+          "description": "ui preset: Nunito",
+          "valuesByMode": {
+            "Default": "Nunito"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-ui-nunito"
+        },
+        {
+          "id": "rivers-ds-fonts/ui-lexend",
+          "name": "fonts/ui-lexend",
+          "type": "STRING",
+          "description": "ui preset: Lexend",
+          "valuesByMode": {
+            "Default": "Lexend"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-ui-lexend"
+        },
+        {
+          "id": "rivers-ds-fonts/code",
+          "name": "fonts/code",
+          "type": "STRING",
+          "description": "Monospace / code font family",
+          "valuesByMode": {
+            "Default": "Geist Mono"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-code"
+        },
+        {
+          "id": "rivers-ds-fonts/code-geist-mono",
+          "name": "fonts/code-geist-mono",
+          "type": "STRING",
+          "description": "code preset: Geist Mono",
+          "valuesByMode": {
+            "Default": "Geist Mono"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-code-geist-mono"
+        },
+        {
+          "id": "rivers-ds-fonts/code-jetbrains-mono",
+          "name": "fonts/code-jetbrains-mono",
+          "type": "STRING",
+          "description": "code preset: Jetbrains Mono",
+          "valuesByMode": {
+            "Default": "Jetbrains Mono"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-code-jetbrains-mono"
+        },
+        {
+          "id": "rivers-ds-fonts/code-fira-code",
+          "name": "fonts/code-fira-code",
+          "type": "STRING",
+          "description": "code preset: Fira Code",
+          "valuesByMode": {
+            "Default": "Fira Code"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-code-fira-code"
+        },
+        {
+          "id": "rivers-ds-fonts/code-source-code-pro",
+          "name": "fonts/code-source-code-pro",
+          "type": "STRING",
+          "description": "code preset: Source Code Pro",
+          "valuesByMode": {
+            "Default": "Source Code Pro"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-code-source-code-pro"
+        },
+        {
+          "id": "rivers-ds-fonts/code-roboto-mono",
+          "name": "fonts/code-roboto-mono",
+          "type": "STRING",
+          "description": "code preset: Roboto Mono",
+          "valuesByMode": {
+            "Default": "Roboto Mono"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-code-roboto-mono"
+        },
+        {
+          "id": "rivers-ds-fonts/display",
+          "name": "fonts/display",
+          "type": "STRING",
+          "description": "Display / heading font family",
+          "valuesByMode": {
+            "Default": "Ui"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-display"
+        },
+        {
+          "id": "rivers-ds-fonts/display-playfair",
+          "name": "fonts/display-playfair",
+          "type": "STRING",
+          "description": "display preset: Playfair",
+          "valuesByMode": {
+            "Default": "Playfair"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-display-playfair"
+        },
+        {
+          "id": "rivers-ds-fonts/display-montserrat",
+          "name": "fonts/display-montserrat",
+          "type": "STRING",
+          "description": "display preset: Montserrat",
+          "valuesByMode": {
+            "Default": "Montserrat"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-display-montserrat"
+        },
+        {
+          "id": "rivers-ds-fonts/display-raleway",
+          "name": "fonts/display-raleway",
+          "type": "STRING",
+          "description": "display preset: Raleway",
+          "valuesByMode": {
+            "Default": "Raleway"
+          },
+          "scopes": [
+            "FONT_FAMILY"
+          ],
+          "codePath": "--font-display-raleway"
+        }
+      ]
+    },
+    {
+      "id": "rivers-ds-border-width",
+      "name": "Border Width",
+      "modes": [
+        "Default"
+      ],
+      "variables": [
+        {
+          "id": "rivers-ds-border-width/default",
+          "name": "borderWidth/default",
+          "type": "FLOAT",
+          "description": "Default border width: 1px",
+          "valuesByMode": {
+            "Default": 1
+          },
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "codePath": "--border-width"
+        },
+        {
+          "id": "rivers-ds-border-width/2",
+          "name": "borderWidth/2",
+          "type": "FLOAT",
+          "description": "Border width 2: 2px",
+          "valuesByMode": {
+            "Default": 2
+          },
+          "scopes": [
+            "STROKE_FLOAT"
+          ],
+          "codePath": "--border-width-2"
+        }
+      ]
+    },
+    {
+      "id": "rivers-ds-opacity",
+      "name": "Opacity",
+      "modes": [
+        "Default"
+      ],
+      "variables": [
+        {
+          "id": "rivers-ds-opacity/disabled",
+          "name": "opacity/disabled",
+          "type": "FLOAT",
+          "description": "Disabled state opacity",
+          "valuesByMode": {
+            "Default": 0.5
+          },
+          "scopes": [
+            "OPACITY"
+          ],
+          "codePath": "--opacity-disabled"
+        },
+        {
+          "id": "rivers-ds-opacity/hover",
+          "name": "opacity/hover",
+          "type": "FLOAT",
+          "description": "Hover state opacity",
+          "valuesByMode": {
+            "Default": 0.8
+          },
+          "scopes": [
+            "OPACITY"
+          ],
+          "codePath": "--opacity-hover"
+        },
+        {
+          "id": "rivers-ds-opacity/subtle",
+          "name": "opacity/subtle",
+          "type": "FLOAT",
+          "description": "Subtle/muted opacity",
+          "valuesByMode": {
+            "Default": 0.6
+          },
+          "scopes": [
+            "OPACITY"
+          ],
+          "codePath": "--opacity-subtle"
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "name": "Button",
+      "description": "Clickable button for user interactions",
+      "variantProperties": {
+        "Variant": [
+          "Primary",
+          "Destructive",
+          "Outline",
+          "Secondary",
+          "Ghost",
+          "Link"
+        ],
+        "Size": [
+          "XS",
+          "SM",
+          "MD",
+          "LG",
+          "Icon",
+          "Icon-XS",
+          "Icon-SM",
+          "Icon-LG"
+        ],
+        "State": [
+          "Default",
+          "Hover",
+          "Focus",
+          "Active",
+          "Disabled"
+        ]
+      },
+      "componentProperties": [
+        {
+          "name": "Disabled",
+          "type": "BOOLEAN",
+          "defaultValue": false
+        },
+        {
+          "name": "Label",
+          "type": "TEXT",
+          "defaultValue": "Button"
+        },
+        {
+          "name": "Show Left Icon",
+          "type": "BOOLEAN",
+          "defaultValue": false
+        },
+        {
+          "name": "Show Right Icon",
+          "type": "BOOLEAN",
+          "defaultValue": false
+        },
+        {
+          "name": "Left Icon",
+          "type": "INSTANCE_SWAP",
+          "defaultValue": ""
+        },
+        {
+          "name": "Right Icon",
+          "type": "INSTANCE_SWAP",
+          "defaultValue": ""
+        }
+      ],
+      "variants": [
+        {
+          "name": "Variant=Primary, Size=XS, State=Default",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "XS",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=XS, State=Hover",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "XS",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=XS, State=Focus",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "XS",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=XS, State=Active",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "XS",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=XS, State=Disabled",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "XS",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=SM, State=Default",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "SM",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=SM, State=Hover",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "SM",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=SM, State=Focus",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "SM",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=SM, State=Active",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "SM",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=SM, State=Disabled",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "SM",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=MD, State=Default",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "MD",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=MD, State=Hover",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "MD",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=MD, State=Focus",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "MD",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=MD, State=Active",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "MD",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=MD, State=Disabled",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "MD",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=LG, State=Default",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "LG",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=LG, State=Hover",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "LG",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=LG, State=Focus",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "LG",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=LG, State=Active",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "LG",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=LG, State=Disabled",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "LG",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon, State=Default",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/9",
+            "width": "spacing/9"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon, State=Hover",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon, State=Focus",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon, State=Active",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon, State=Disabled",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon-XS, State=Default",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon-XS",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/6",
+            "width": "spacing/6"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon-XS, State=Hover",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon-XS",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon-XS, State=Focus",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon-XS",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon-XS, State=Active",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon-XS",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon-XS, State=Disabled",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon-XS",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon-SM, State=Default",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon-SM",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/8",
+            "width": "spacing/8"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon-SM, State=Hover",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon-SM",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon-SM, State=Focus",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon-SM",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon-SM, State=Active",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon-SM",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon-SM, State=Disabled",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon-SM",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon-LG, State=Default",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon-LG",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/10",
+            "width": "spacing/10"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon-LG, State=Hover",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon-LG",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon-LG, State=Focus",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon-LG",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon-LG, State=Active",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon-LG",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Primary, Size=Icon-LG, State=Disabled",
+          "properties": {
+            "Variant": "Primary",
+            "Size": "Icon-LG",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=XS, State=Default",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "XS",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=XS, State=Hover",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "XS",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=XS, State=Focus",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "XS",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=XS, State=Active",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "XS",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=XS, State=Disabled",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "XS",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=SM, State=Default",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "SM",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=SM, State=Hover",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "SM",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=SM, State=Focus",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "SM",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=SM, State=Active",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "SM",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=SM, State=Disabled",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "SM",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=MD, State=Default",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "MD",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=MD, State=Hover",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "MD",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=MD, State=Focus",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "MD",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=MD, State=Active",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "MD",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=MD, State=Disabled",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "MD",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=LG, State=Default",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "LG",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=LG, State=Hover",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "LG",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=LG, State=Focus",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "LG",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=LG, State=Active",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "LG",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=LG, State=Disabled",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "LG",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon, State=Default",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/9",
+            "width": "spacing/9"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon, State=Hover",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon, State=Focus",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon, State=Active",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon, State=Disabled",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon-XS, State=Default",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon-XS",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/6",
+            "width": "spacing/6"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon-XS, State=Hover",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon-XS",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon-XS, State=Focus",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon-XS",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon-XS, State=Active",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon-XS",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon-XS, State=Disabled",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon-XS",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon-SM, State=Default",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon-SM",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/8",
+            "width": "spacing/8"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon-SM, State=Hover",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon-SM",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon-SM, State=Focus",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon-SM",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon-SM, State=Active",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon-SM",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon-SM, State=Disabled",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon-SM",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon-LG, State=Default",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon-LG",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/10",
+            "width": "spacing/10"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon-LG, State=Hover",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon-LG",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon-LG, State=Focus",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon-LG",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon-LG, State=Active",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon-LG",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Destructive, Size=Icon-LG, State=Disabled",
+          "properties": {
+            "Variant": "Destructive",
+            "Size": "Icon-LG",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/destructive",
+            "textFill": "colors/destructive-foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=XS, State=Default",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "XS",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=XS, State=Hover",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "XS",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=XS, State=Focus",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "XS",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=XS, State=Active",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "XS",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=XS, State=Disabled",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "XS",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=SM, State=Default",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "SM",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=SM, State=Hover",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "SM",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=SM, State=Focus",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "SM",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=SM, State=Active",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "SM",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=SM, State=Disabled",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "SM",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=MD, State=Default",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "MD",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=MD, State=Hover",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "MD",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=MD, State=Focus",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "MD",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=MD, State=Active",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "MD",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=MD, State=Disabled",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "MD",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=LG, State=Default",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "LG",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=LG, State=Hover",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "LG",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=LG, State=Focus",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "LG",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=LG, State=Active",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "LG",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=LG, State=Disabled",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "LG",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon, State=Default",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/9",
+            "width": "spacing/9"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon, State=Hover",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon, State=Focus",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon, State=Active",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon, State=Disabled",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon-XS, State=Default",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon-XS",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/6",
+            "width": "spacing/6"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon-XS, State=Hover",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon-XS",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon-XS, State=Focus",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon-XS",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon-XS, State=Active",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon-XS",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon-XS, State=Disabled",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon-XS",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon-SM, State=Default",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon-SM",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/8",
+            "width": "spacing/8"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon-SM, State=Hover",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon-SM",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon-SM, State=Focus",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon-SM",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon-SM, State=Active",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon-SM",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon-SM, State=Disabled",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon-SM",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon-LG, State=Default",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon-LG",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/10",
+            "width": "spacing/10"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon-LG, State=Hover",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon-LG",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon-LG, State=Focus",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon-LG",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon-LG, State=Active",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon-LG",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Outline, Size=Icon-LG, State=Disabled",
+          "properties": {
+            "Variant": "Outline",
+            "Size": "Icon-LG",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/background",
+            "textFill": "colors/foreground",
+            "stroke": "colors/border",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=XS, State=Default",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "XS",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=XS, State=Hover",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "XS",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=XS, State=Focus",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "XS",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=XS, State=Active",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "XS",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=XS, State=Disabled",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "XS",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=SM, State=Default",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "SM",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=SM, State=Hover",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "SM",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=SM, State=Focus",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "SM",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=SM, State=Active",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "SM",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=SM, State=Disabled",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "SM",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=MD, State=Default",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "MD",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=MD, State=Hover",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "MD",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=MD, State=Focus",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "MD",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=MD, State=Active",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "MD",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=MD, State=Disabled",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "MD",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=LG, State=Default",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "LG",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=LG, State=Hover",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "LG",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=LG, State=Focus",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "LG",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=LG, State=Active",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "LG",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=LG, State=Disabled",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "LG",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon, State=Default",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/9",
+            "width": "spacing/9"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon, State=Hover",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon, State=Focus",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon, State=Active",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon, State=Disabled",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon-XS, State=Default",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon-XS",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/6",
+            "width": "spacing/6"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon-XS, State=Hover",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon-XS",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon-XS, State=Focus",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon-XS",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon-XS, State=Active",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon-XS",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon-XS, State=Disabled",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon-XS",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon-SM, State=Default",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon-SM",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/8",
+            "width": "spacing/8"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon-SM, State=Hover",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon-SM",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon-SM, State=Focus",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon-SM",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon-SM, State=Active",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon-SM",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon-SM, State=Disabled",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon-SM",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon-LG, State=Default",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon-LG",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/10",
+            "width": "spacing/10"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon-LG, State=Hover",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon-LG",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon-LG, State=Focus",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon-LG",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon-LG, State=Active",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon-LG",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Secondary, Size=Icon-LG, State=Disabled",
+          "properties": {
+            "Variant": "Secondary",
+            "Size": "Icon-LG",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "colors/secondary",
+            "textFill": "colors/secondary-foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=XS, State=Default",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "XS",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=XS, State=Hover",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "XS",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=XS, State=Focus",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "XS",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=XS, State=Active",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "XS",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=XS, State=Disabled",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "XS",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=SM, State=Default",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "SM",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=SM, State=Hover",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "SM",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=SM, State=Focus",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "SM",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=SM, State=Active",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "SM",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=SM, State=Disabled",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "SM",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=MD, State=Default",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "MD",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=MD, State=Hover",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "MD",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=MD, State=Focus",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "MD",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=MD, State=Active",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "MD",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=MD, State=Disabled",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "MD",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=LG, State=Default",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "LG",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=LG, State=Hover",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "LG",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=LG, State=Focus",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "LG",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=LG, State=Active",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "LG",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=LG, State=Disabled",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "LG",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon, State=Default",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/9",
+            "width": "spacing/9"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon, State=Hover",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon, State=Focus",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon, State=Active",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon, State=Disabled",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon-XS, State=Default",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon-XS",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/6",
+            "width": "spacing/6"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon-XS, State=Hover",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon-XS",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon-XS, State=Focus",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon-XS",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon-XS, State=Active",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon-XS",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon-XS, State=Disabled",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon-XS",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon-SM, State=Default",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon-SM",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/8",
+            "width": "spacing/8"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon-SM, State=Hover",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon-SM",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon-SM, State=Focus",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon-SM",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon-SM, State=Active",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon-SM",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon-SM, State=Disabled",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon-SM",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon-LG, State=Default",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon-LG",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/10",
+            "width": "spacing/10"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon-LG, State=Hover",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon-LG",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon-LG, State=Focus",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon-LG",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon-LG, State=Active",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon-LG",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Ghost, Size=Icon-LG, State=Disabled",
+          "properties": {
+            "Variant": "Ghost",
+            "Size": "Icon-LG",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/foreground",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=XS, State=Default",
+          "properties": {
+            "Variant": "Link",
+            "Size": "XS",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=XS, State=Hover",
+          "properties": {
+            "Variant": "Link",
+            "Size": "XS",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=XS, State=Focus",
+          "properties": {
+            "Variant": "Link",
+            "Size": "XS",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=XS, State=Active",
+          "properties": {
+            "Variant": "Link",
+            "Size": "XS",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=XS, State=Disabled",
+          "properties": {
+            "Variant": "Link",
+            "Size": "XS",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/7",
+            "paddingLeft": "spacing/2",
+            "paddingRight": "spacing/2",
+            "fontSize": "typography/fontSize-xs",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=SM, State=Default",
+          "properties": {
+            "Variant": "Link",
+            "Size": "SM",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=SM, State=Hover",
+          "properties": {
+            "Variant": "Link",
+            "Size": "SM",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=SM, State=Focus",
+          "properties": {
+            "Variant": "Link",
+            "Size": "SM",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=SM, State=Active",
+          "properties": {
+            "Variant": "Link",
+            "Size": "SM",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=SM, State=Disabled",
+          "properties": {
+            "Variant": "Link",
+            "Size": "SM",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/8",
+            "paddingLeft": "spacing/3",
+            "paddingRight": "spacing/3",
+            "fontSize": "typography/fontSize-xs",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=MD, State=Default",
+          "properties": {
+            "Variant": "Link",
+            "Size": "MD",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=MD, State=Hover",
+          "properties": {
+            "Variant": "Link",
+            "Size": "MD",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=MD, State=Focus",
+          "properties": {
+            "Variant": "Link",
+            "Size": "MD",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=MD, State=Active",
+          "properties": {
+            "Variant": "Link",
+            "Size": "MD",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=MD, State=Disabled",
+          "properties": {
+            "Variant": "Link",
+            "Size": "MD",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/9",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "fontSize": "typography/fontSize-sm",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=LG, State=Default",
+          "properties": {
+            "Variant": "Link",
+            "Size": "LG",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=LG, State=Hover",
+          "properties": {
+            "Variant": "Link",
+            "Size": "LG",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=LG, State=Focus",
+          "properties": {
+            "Variant": "Link",
+            "Size": "LG",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=LG, State=Active",
+          "properties": {
+            "Variant": "Link",
+            "Size": "LG",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=LG, State=Disabled",
+          "properties": {
+            "Variant": "Link",
+            "Size": "LG",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/10",
+            "paddingLeft": "spacing/6",
+            "paddingRight": "spacing/6",
+            "fontSize": "typography/fontSize-sm",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon, State=Default",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/9",
+            "width": "spacing/9"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon, State=Hover",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon, State=Focus",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon, State=Active",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon, State=Disabled",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/9",
+            "width": "spacing/9",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon-XS, State=Default",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon-XS",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/6",
+            "width": "spacing/6"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon-XS, State=Hover",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon-XS",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon-XS, State=Focus",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon-XS",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon-XS, State=Active",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon-XS",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon-XS, State=Disabled",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon-XS",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/6",
+            "width": "spacing/6",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon-SM, State=Default",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon-SM",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/8",
+            "width": "spacing/8"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon-SM, State=Hover",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon-SM",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon-SM, State=Focus",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon-SM",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon-SM, State=Active",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon-SM",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon-SM, State=Disabled",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon-SM",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/8",
+            "width": "spacing/8",
+            "opacity": "opacity/disabled"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon-LG, State=Default",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon-LG",
+            "State": "Default"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/10",
+            "width": "spacing/10"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon-LG, State=Hover",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon-LG",
+            "State": "Hover"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "hover"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon-LG, State=Focus",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon-LG",
+            "State": "Focus"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "focus"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon-LG, State=Active",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon-LG",
+            "State": "Active"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "_state": "active"
+          }
+        },
+        {
+          "name": "Variant=Link, Size=Icon-LG, State=Disabled",
+          "properties": {
+            "Variant": "Link",
+            "Size": "Icon-LG",
+            "State": "Disabled"
+          },
+          "tokenBindings": {
+            "fill": "__none__",
+            "textFill": "colors/primary",
+            "height": "spacing/10",
+            "width": "spacing/10",
+            "opacity": "opacity/disabled"
+          }
+        }
+      ],
+      "slots": [
+        {
+          "id": "root",
+          "type": "FRAME",
+          "name": "Button Root",
+          "isRoot": true,
+          "layoutMode": "HORIZONTAL",
+          "primaryAxisSizing": "AUTO",
+          "counterAxisSizing": "AUTO",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "variableBindings": {
+            "fill": "colors/primary",
+            "textFill": "colors/primary-foreground",
+            "paddingLeft": "spacing/4",
+            "paddingRight": "spacing/4",
+            "paddingTop": "spacing/2",
+            "paddingBottom": "spacing/2",
+            "itemSpacing": "spacing/2",
+            "height": "spacing/9",
+            "topLeftRadius": "density/radius-md",
+            "topRightRadius": "density/radius-md",
+            "bottomLeftRadius": "density/radius-md",
+            "bottomRightRadius": "density/radius-md",
+            "strokeWeight": "borderWidth/default"
+          },
+          "defaults": {}
+        },
+        {
+          "id": "iconLeft",
+          "type": "ICON",
+          "name": "Left Icon",
+          "parent": "root",
+          "primaryAxisSizing": "FIXED",
+          "counterAxisSizing": "FIXED",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "variableBindings": {
+            "width": "spacing/4",
+            "height": "spacing/4"
+          },
+          "defaults": {
+            "width": 16,
+            "height": 16,
+            "defaultIcon": "plus"
+          },
+          "iconLibraryNodeId": "78:3451",
+          "isOptional": true,
+          "linkedBooleanProperty": "Show Left Icon"
+        },
+        {
+          "id": "label",
+          "type": "TEXT",
+          "name": "Label",
+          "parent": "root",
+          "primaryAxisSizing": "AUTO",
+          "counterAxisSizing": "AUTO",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "variableBindings": {
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal"
+          },
+          "defaults": {
+            "text": "Button"
+          }
+        },
+        {
+          "id": "iconRight",
+          "type": "ICON",
+          "name": "Right Icon",
+          "parent": "root",
+          "primaryAxisSizing": "FIXED",
+          "counterAxisSizing": "FIXED",
+          "primaryAxisAlignItems": "CENTER",
+          "counterAxisAlignItems": "CENTER",
+          "variableBindings": {
+            "width": "spacing/4",
+            "height": "spacing/4"
+          },
+          "defaults": {
+            "width": 16,
+            "height": 16,
+            "defaultIcon": "plus"
+          },
+          "iconLibraryNodeId": "78:3451",
+          "isOptional": true,
+          "linkedBooleanProperty": "Show Right Icon"
+        }
+      ]
+    }
+  ],
+  "textStyles": [
+    {
+      "name": "Heading/H1",
+      "fontFamily": "Inter",
+      "fontStyle": "Bold",
+      "fontSize": 36,
+      "lineHeight": 40,
+      "letterSpacing": -0.5
+    },
+    {
+      "name": "Heading/H2",
+      "fontFamily": "Inter",
+      "fontStyle": "SemiBold",
+      "fontSize": 30,
+      "lineHeight": 36,
+      "letterSpacing": -0.25
+    },
+    {
+      "name": "Heading/H3",
+      "fontFamily": "Inter",
+      "fontStyle": "SemiBold",
+      "fontSize": 24,
+      "lineHeight": 32,
+      "letterSpacing": 0
+    },
+    {
+      "name": "Heading/H4",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 20,
+      "lineHeight": 28,
+      "letterSpacing": 0
+    },
+    {
+      "name": "Body/Large",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 18,
+      "lineHeight": 28,
+      "letterSpacing": 0
+    },
+    {
+      "name": "Body/Default",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "letterSpacing": 0
+    },
+    {
+      "name": "Body/Small",
+      "fontFamily": "Inter",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "letterSpacing": 0
+    },
+    {
+      "name": "Label/Default",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "letterSpacing": 0
+    },
+    {
+      "name": "Label/Small",
+      "fontFamily": "Inter",
+      "fontStyle": "Medium",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "letterSpacing": 0
+    },
+    {
+      "name": "Code/Default",
+      "fontFamily": "JetBrains Mono",
+      "fontStyle": "Regular",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "letterSpacing": 0
+    },
+    {
+      "name": "Code/Small",
+      "fontFamily": "JetBrains Mono",
+      "fontStyle": "Regular",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "letterSpacing": 0
+    }
+  ],
+  "effectStyles": [
+    {
+      "name": "Shadow/XS",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.05
+          },
+          "offset": {
+            "x": 0,
+            "y": 1
+          },
+          "radius": 2,
+          "spread": 0,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "Shadow/SM",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.05
+          },
+          "offset": {
+            "x": 0,
+            "y": 1
+          },
+          "radius": 3,
+          "spread": 0,
+          "visible": true
+        },
+        {
+          "type": "DROP_SHADOW",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.1
+          },
+          "offset": {
+            "x": 0,
+            "y": 1
+          },
+          "radius": 2,
+          "spread": 0,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "Shadow/MD",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.1
+          },
+          "offset": {
+            "x": 0,
+            "y": 4
+          },
+          "radius": 6,
+          "spread": -1,
+          "visible": true
+        },
+        {
+          "type": "DROP_SHADOW",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.1
+          },
+          "offset": {
+            "x": 0,
+            "y": 2
+          },
+          "radius": 4,
+          "spread": -2,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "Shadow/LG",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.1
+          },
+          "offset": {
+            "x": 0,
+            "y": 10
+          },
+          "radius": 15,
+          "spread": -3,
+          "visible": true
+        },
+        {
+          "type": "DROP_SHADOW",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.1
+          },
+          "offset": {
+            "x": 0,
+            "y": 4
+          },
+          "radius": 6,
+          "spread": -4,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "Shadow/XL",
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.1
+          },
+          "offset": {
+            "x": 0,
+            "y": 20
+          },
+          "radius": 25,
+          "spread": -5,
+          "visible": true
+        },
+        {
+          "type": "DROP_SHADOW",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.1
+          },
+          "offset": {
+            "x": 0,
+            "y": 8
+          },
+          "radius": 10,
+          "spread": -6,
+          "visible": true
+        }
+      ]
+    }
+  ],
+  "codeConnect": [
+    {
+      "componentName": "Button",
+      "importPath": "@/components/ui/button",
+      "exportName": "Button",
+      "props": [
+        {
+          "figmaProperty": "Variant",
+          "codeProp": "variant",
+          "valueMapping": {
+            "default": "Primary",
+            "destructive": "Destructive",
+            "outline": "Outline",
+            "secondary": "Secondary",
+            "ghost": "Ghost",
+            "link": "Link"
+          }
+        },
+        {
+          "figmaProperty": "Size",
+          "codeProp": "size",
+          "valueMapping": {
+            "xs": "XS",
+            "sm": "SM",
+            "default": "MD",
+            "lg": "LG",
+            "icon": "Icon",
+            "icon-xs": "Icon-XS",
+            "icon-sm": "Icon-SM",
+            "icon-lg": "Icon-LG"
+          }
+        },
+        {
+          "figmaProperty": "Disabled",
+          "codeProp": "disabled"
+        },
+        {
+          "figmaProperty": "Label",
+          "codeProp": "children"
+        },
+        {
+          "figmaProperty": "Show Left Icon",
+          "codeProp": "showLeftIcon"
+        },
+        {
+          "figmaProperty": "Show Right Icon",
+          "codeProp": "showRightIcon"
+        },
+        {
+          "figmaProperty": "Left Icon",
+          "codeProp": "iconLeft"
+        },
+        {
+          "figmaProperty": "Right Icon",
+          "codeProp": "iconRight"
+        }
+      ]
+    }
+  ]
+}

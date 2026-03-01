@@ -25,6 +25,7 @@ export interface FigmaPluginExport {
 // ============================================
 
 export interface FigmaPluginVariableCollection {
+  id?: string;
   name: string;
   modes: string[];
   variables: FigmaPluginVariable[];
@@ -57,6 +58,7 @@ export type FigmaVariableScope =
 export type FigmaVariableType = "COLOR" | "FLOAT" | "STRING" | "BOOLEAN";
 
 export interface FigmaPluginVariable {
+  id?: string;
   name: string;
   type: FigmaVariableType;
   description?: string;

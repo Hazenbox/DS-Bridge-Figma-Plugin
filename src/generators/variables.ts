@@ -8,49 +8,83 @@ import type { FigmaPluginVariableCollection, FigmaPluginVariable } from "../type
 import { parseColor } from "../utils/colors";
 
 /**
- * Create all variable collections and return a map of codePath -> Variable
+ * Create all variable collections and return a map of name -> Variable.
+ * Deduplicates: if a collection with the same name already exists, reuses it
+ * and updates existing variables instead of creating duplicates.
  */
 export async function createVariableCollections(
   collections: FigmaPluginVariableCollection[]
 ): Promise<Map<string, Variable>> {
   const variableMap = new Map<string, Variable>();
 
+  const existingCollections = figma.variables.getLocalVariableCollections();
+  const existingCollectionsByName = new Map<string, VariableCollection>();
+  for (const c of existingCollections) {
+    existingCollectionsByName.set(c.name, c);
+  }
+
+  const existingVariables = figma.variables.getLocalVariables();
+  const existingVarsByCollectionAndName = new Map<string, Variable>();
+  for (const v of existingVariables) {
+    existingVarsByCollectionAndName.set(`${v.variableCollectionId}/${v.name}`, v);
+  }
+
   for (const collDef of collections) {
     try {
-      // Create collection
-      const collection = figma.variables.createVariableCollection(collDef.name);
+      let collection = existingCollectionsByName.get(collDef.name);
+      let modeIds: string[];
 
-      // Set up modes (rename default, add others)
-      const modeIds: string[] = [];
+      if (collection) {
+        modeIds = collection.modes.map((m) => m.modeId);
+      } else {
+        collection = figma.variables.createVariableCollection(collDef.name);
+        modeIds = [];
 
-      for (let i = 0; i < collDef.modes.length; i++) {
-        if (i === 0) {
-          // Rename the default mode
-          collection.renameMode(collection.defaultModeId, collDef.modes[i]);
-          modeIds.push(collection.defaultModeId);
-        } else {
-          // Add new mode
-          try {
-            const newModeId = collection.addMode(collDef.modes[i]);
-            modeIds.push(newModeId);
-          } catch (error) {
-            // Mode limit reached (free tier = 1, pro = 4)
-            console.warn(`Could not add mode "${collDef.modes[i]}": mode limit reached`);
-            figma.notify(`Mode limit reached. Upgrade Figma plan for more modes.`, {
-              error: true,
-            });
-            break;
+        for (let i = 0; i < collDef.modes.length; i++) {
+          if (i === 0) {
+            collection.renameMode(collection.defaultModeId, collDef.modes[i]);
+            modeIds.push(collection.defaultModeId);
+          } else {
+            try {
+              const newModeId = collection.addMode(collDef.modes[i]);
+              modeIds.push(newModeId);
+            } catch (error) {
+              console.warn(`Could not add mode "${collDef.modes[i]}": mode limit reached`);
+              figma.notify(`Mode limit reached. Upgrade Figma plan for more modes.`, {
+                error: true,
+              });
+              break;
+            }
           }
         }
       }
 
-      // Create variables
       for (const varDef of collDef.variables) {
         try {
-          const variable = await createVariable(collection, varDef, modeIds, collDef.modes);
-          // Store by variable name (primary key for bindings)
+          const existingVar = existingVarsByCollectionAndName.get(
+            `${collection.id}/${varDef.name}`
+          );
+
+          let variable: Variable;
+          if (existingVar) {
+            variable = existingVar;
+            if (varDef.description) variable.description = varDef.description;
+            if (varDef.scopes?.length) variable.scopes = varDef.scopes as VariableScope[];
+          } else {
+            variable = await createVariable(collection, varDef, modeIds, collDef.modes);
+          }
+
+          // Update mode values even for existing variables
+          for (let i = 0; i < modeIds.length; i++) {
+            const modeName = collDef.modes[i];
+            const rawValue = varDef.valuesByMode[modeName];
+            if (rawValue !== undefined) {
+              const convertedValue = convertValue(rawValue, varDef.type);
+              variable.setValueForMode(modeIds[i], convertedValue);
+            }
+          }
+
           variableMap.set(varDef.name, variable);
-          // Also store by codePath as fallback for legacy references
           if (varDef.codePath && varDef.codePath !== varDef.name) {
             variableMap.set(varDef.codePath, variable);
           }
@@ -59,7 +93,6 @@ export async function createVariableCollections(
         }
       }
 
-      // Yield to prevent UI freezing
       await delay(10);
     } catch (error) {
       console.error(`Failed to create collection "${collDef.name}":`, error);

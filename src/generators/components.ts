@@ -262,9 +262,10 @@ async function applySlotToText(
     }
   }
 
-  // Apply typography variable bindings (fontSize, fontWeight, lineHeight)
-  for (const [variableName, fieldName] of Object.entries(slot.variableBindings)) {
-    if (fieldName === "fontSize" || fieldName === "fontWeight" || fieldName === "lineHeight") {
+  // Apply typography variable bindings (fontSize, fontWeight, lineHeight, letterSpacing)
+  const typographyFields = ["fontSize", "fontWeight", "lineHeight", "letterSpacing"];
+  for (const [fieldName, variableName] of Object.entries(slot.variableBindings)) {
+    if (typographyFields.includes(fieldName) && typeof variableName === "string") {
       const variable = variableMap.get(variableName);
       if (variable) {
         try {
@@ -279,56 +280,52 @@ async function applySlotToText(
 
 /**
  * Apply variable bindings to a frame
- * The bindings object is keyed by variable name, value is field name(s)
+ * Bindings: key = Figma field name, value = variable name (or array of variable names)
  */
 async function applyVariableBindings(
   frame: FrameNode | ComponentNode,
   bindings: Record<string, string | string[]>,
   variableMap: Map<string, Variable>
 ): Promise<void> {
-  for (const [variableName, fieldNameOrArray] of Object.entries(bindings)) {
+  for (const [fieldName, variableName] of Object.entries(bindings)) {
+    if (typeof variableName !== "string") continue;
+
     const variable = variableMap.get(variableName);
     if (!variable) {
-      console.warn(`Variable not found: ${variableName}`);
+      console.warn(`Variable not found: ${variableName} (for field ${fieldName})`);
       continue;
     }
 
-    // Handle array of fields (for symmetric properties like padding-inline)
-    const fieldNames = Array.isArray(fieldNameOrArray) ? fieldNameOrArray : [fieldNameOrArray];
-
-    for (const fieldName of fieldNames) {
-      try {
-        // Handle color bindings separately
-        if (fieldName === "fill") {
-          const solidPaint = figma.util.solidPaint("#000000");
-          const boundPaint = figma.variables.setBoundVariableForPaint(
-            solidPaint,
-            "color",
-            variable
-          );
-          frame.fills = [boundPaint];
-        } else if (fieldName === "stroke") {
-          const solidPaint = figma.util.solidPaint("#000000");
-          const boundPaint = figma.variables.setBoundVariableForPaint(
-            solidPaint,
-            "color",
-            variable
-          );
-          frame.strokes = [boundPaint];
-          frame.strokeWeight = 1;
-        } else if (isBindableField(fieldName)) {
-          // Numeric bindings
-          frame.setBoundVariable(fieldName as VariableBindableNodeField, variable);
-        }
-      } catch (error) {
-        console.warn(`Could not bind variable ${variableName} to ${fieldName}:`, error);
+    try {
+      if (fieldName === "fill") {
+        const solidPaint = figma.util.solidPaint("#000000");
+        const boundPaint = figma.variables.setBoundVariableForPaint(
+          solidPaint,
+          "color",
+          variable
+        );
+        frame.fills = [boundPaint];
+      } else if (fieldName === "stroke") {
+        const solidPaint = figma.util.solidPaint("#000000");
+        const boundPaint = figma.variables.setBoundVariableForPaint(
+          solidPaint,
+          "color",
+          variable
+        );
+        frame.strokes = [boundPaint];
+        frame.strokeWeight = 1;
+      } else if (isBindableField(fieldName)) {
+        frame.setBoundVariable(fieldName as VariableBindableNodeField, variable);
       }
+    } catch (error) {
+      console.warn(`Could not bind variable ${variableName} to ${fieldName}:`, error);
     }
   }
 }
 
 /**
- * Apply per-variant token bindings (colors based on variant type)
+ * Apply per-variant token bindings (colors, sizes, spacing overrides)
+ * key = Figma field name, value = variable name
  */
 async function applyVariantTokenBindings(
   frame: FrameNode | ComponentNode,
@@ -336,6 +333,8 @@ async function applyVariantTokenBindings(
   variableMap: Map<string, Variable>
 ): Promise<void> {
   for (const [fieldName, variableName] of Object.entries(tokenBindings)) {
+    if (fieldName === "_state") continue;
+
     const variable = variableMap.get(variableName);
 
     try {
@@ -348,8 +347,10 @@ async function applyVariantTokenBindings(
         );
         frame.fills = [boundPaint];
       } else if (fieldName === "fill" && !variable) {
-        // Transparent fill (for outline, ghost, link variants)
         frame.fills = [];
+      } else if (fieldName === "textFill") {
+        // textFill is applied to child text nodes, not the frame itself - skip here
+        continue;
       } else if (fieldName === "stroke" && variable) {
         const solidPaint = figma.util.solidPaint("#000000");
         const boundPaint = figma.variables.setBoundVariableForPaint(
@@ -359,8 +360,8 @@ async function applyVariantTokenBindings(
         );
         frame.strokes = [boundPaint];
         frame.strokeWeight = 1;
-      } else if (fieldName === "opacity" && variable) {
-        frame.setBoundVariable("opacity", variable);
+      } else if (variable && isBindableField(fieldName)) {
+        frame.setBoundVariable(fieldName as VariableBindableNodeField, variable);
       }
     } catch (error) {
       console.warn(`Could not apply variant binding ${fieldName}:`, error);
@@ -403,19 +404,33 @@ type VariableBindableTextField = "fontSize" | "fontWeight" | "lineHeight" | "let
  */
 function applyDefaults(frame: FrameNode | ComponentNode, defaults: Record<string, unknown>): void {
   for (const [key, value] of Object.entries(defaults)) {
+    if (typeof value !== "number") continue;
     try {
-      if (key === "paddingLeft" && typeof value === "number") {
-        frame.paddingLeft = value;
-      } else if (key === "paddingRight" && typeof value === "number") {
-        frame.paddingRight = value;
-      } else if (key === "paddingTop" && typeof value === "number") {
-        frame.paddingTop = value;
-      } else if (key === "paddingBottom" && typeof value === "number") {
-        frame.paddingBottom = value;
-      } else if (key === "itemSpacing" && typeof value === "number") {
-        frame.itemSpacing = value;
-      } else if (key === "cornerRadius" && typeof value === "number") {
-        frame.cornerRadius = value;
+      switch (key) {
+        case "width":
+          frame.resize(value, frame.height);
+          break;
+        case "height":
+          frame.resize(frame.width, value);
+          break;
+        case "paddingLeft":
+          frame.paddingLeft = value;
+          break;
+        case "paddingRight":
+          frame.paddingRight = value;
+          break;
+        case "paddingTop":
+          frame.paddingTop = value;
+          break;
+        case "paddingBottom":
+          frame.paddingBottom = value;
+          break;
+        case "itemSpacing":
+          frame.itemSpacing = value;
+          break;
+        case "cornerRadius":
+          frame.cornerRadius = value;
+          break;
       }
     } catch (error) {
       console.warn(`Could not apply default ${key}:`, error);

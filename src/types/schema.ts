@@ -99,7 +99,7 @@ export interface FigmaPluginComponentVariant {
 // SLOTS
 // ============================================
 
-export type FigmaSlotType = "FRAME" | "TEXT" | "RECTANGLE" | "ELLIPSE" | "VECTOR";
+export type FigmaSlotType = "FRAME" | "TEXT" | "RECTANGLE" | "ELLIPSE" | "VECTOR" | "ICON";
 
 export type FigmaLayoutMode = "HORIZONTAL" | "VERTICAL" | "NONE";
 
@@ -121,6 +121,9 @@ export interface FigmaPluginSlot {
   counterAxisAlignItems?: FigmaAxisAlign;
   variableBindings: Record<string, string>;
   defaults: Record<string, unknown>;
+  iconLibraryNodeId?: string;
+  isOptional?: boolean;
+  linkedBooleanProperty?: string;
 }
 
 // ============================================

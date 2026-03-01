@@ -8,6 +8,7 @@ import type {
   FigmaPluginComponent,
   FigmaPluginComponentVariant,
   FigmaPluginSlot,
+  FigmaPluginComponentProperty,
 } from "../types/schema";
 import { parseColor } from "../utils/colors";
 
@@ -85,12 +86,109 @@ async function createComponentSet(
     componentSet.primaryAxisSizingMode = "AUTO";
     componentSet.counterAxisSizingMode = "AUTO";
 
+    // Add component properties (boolean toggles, text overrides, instance swaps)
+    if (componentDef.componentProperties && componentDef.componentProperties.length > 0) {
+      await addComponentProperties(componentSet, componentDef.componentProperties, componentDef.slots, components);
+    }
+
     return componentSet;
   }
 
   // Single component - just set name
   components[0].name = componentDef.name;
   return null;
+}
+
+/**
+ * Add component properties to a ComponentSet
+ * Creates boolean, text, and instance swap properties
+ */
+async function addComponentProperties(
+  componentSet: ComponentSetNode,
+  properties: FigmaPluginComponentProperty[],
+  slots: FigmaPluginSlot[],
+  components: ComponentNode[]
+): Promise<void> {
+  for (const prop of properties) {
+    try {
+      if (prop.type === "BOOLEAN") {
+        // Add boolean property to the component set
+        componentSet.addComponentProperty(prop.name, "BOOLEAN", prop.defaultValue as boolean);
+        
+        // Find the slot that this boolean controls (by linkedBooleanProperty)
+        const linkedSlot = slots.find(s => s.linkedBooleanProperty === prop.name);
+        if (linkedSlot) {
+          // Link the boolean property to the visibility of the corresponding layer in each component
+          for (const component of components) {
+            const layer = component.findOne(n => n.name === linkedSlot.name);
+            if (layer) {
+              // Set initial visibility based on default value
+              layer.visible = prop.defaultValue as boolean;
+              
+              // Expose the layer's visibility as the component property
+              try {
+                // Get the property ID we just created
+                const propDefs = componentSet.componentPropertyDefinitions;
+                const propId = Object.keys(propDefs).find(key => propDefs[key].type === "BOOLEAN" && key.includes(prop.name.replace(/ /g, "_")));
+                if (propId) {
+                  layer.componentPropertyReferences = {
+                    ...layer.componentPropertyReferences,
+                    visible: propId
+                  };
+                }
+              } catch (linkError) {
+                console.warn(`Could not link boolean property "${prop.name}" to layer "${linkedSlot.name}":`, linkError);
+              }
+            }
+          }
+        }
+      } else if (prop.type === "TEXT") {
+        // Add text property
+        componentSet.addComponentProperty(prop.name, "TEXT", prop.defaultValue as string);
+        
+        // Find text layers named "Label" and link them
+        for (const component of components) {
+          const textLayer = component.findOne(n => n.type === "TEXT" && (n.name === "Label" || n.name === prop.name)) as TextNode | null;
+          if (textLayer) {
+            try {
+              const propDefs = componentSet.componentPropertyDefinitions;
+              const propId = Object.keys(propDefs).find(key => propDefs[key].type === "TEXT" && key.includes(prop.name.replace(/ /g, "_")));
+              if (propId) {
+                textLayer.componentPropertyReferences = {
+                  ...textLayer.componentPropertyReferences,
+                  characters: propId
+                };
+              }
+            } catch (linkError) {
+              console.warn(`Could not link text property "${prop.name}" to text layer:`, linkError);
+            }
+          }
+        }
+      } else if (prop.type === "INSTANCE_SWAP") {
+        // For instance swap, we need to find the preferred values (icon components)
+        // and create the property with those as options
+        const preferredValues = prop.preferredValues || [];
+        
+        // Try to find icon components in the document
+        let defaultComponentId: string | undefined;
+        if (preferredValues.length > 0) {
+          const iconComponent = figma.currentPage.findOne(
+            n => n.type === "COMPONENT" && preferredValues.includes(n.name)
+          ) as ComponentNode | null;
+          if (iconComponent) {
+            defaultComponentId = iconComponent.id;
+          }
+        }
+        
+        // Add instance swap property (requires a default component ID)
+        if (defaultComponentId) {
+          componentSet.addComponentProperty(prop.name, "INSTANCE_SWAP", defaultComponentId);
+        }
+      }
+    } catch (error) {
+      console.warn(`Could not add component property "${prop.name}":`, error);
+    }
+  }
 }
 
 /**
@@ -169,6 +267,10 @@ async function createSlotNode(
       node = figma.createEllipse();
       break;
 
+    case "ICON":
+      node = await createIconSlot(slot, variableMap);
+      break;
+
     default:
       node = figma.createFrame();
       await applySlotToFrame(node as FrameNode, slot, variableMap);
@@ -177,6 +279,121 @@ async function createSlotNode(
   node.name = slot.name;
 
   return node;
+}
+
+/**
+ * Create an icon slot - either as an instance of an icon component or a placeholder frame
+ */
+async function createIconSlot(
+  slot: FigmaPluginSlot,
+  variableMap: Map<string, Variable>
+): Promise<FrameNode | InstanceNode> {
+  const width = (slot.defaults?.width as number) || 16;
+  const height = (slot.defaults?.height as number) || 16;
+  const defaultIconName = (slot.defaults?.defaultIcon as string) || "plus";
+
+  // Try to find an icon component from the icon library
+  let iconInstance: InstanceNode | null = null;
+  
+  if (slot.iconLibraryNodeId) {
+    try {
+      // Try to get the icon library node
+      const iconLibraryNode = await figma.getNodeByIdAsync(slot.iconLibraryNodeId);
+      
+      if (iconLibraryNode) {
+        // If it's a component set, find the default icon variant
+        if (iconLibraryNode.type === "COMPONENT_SET") {
+          const defaultVariant = iconLibraryNode.defaultVariant;
+          if (defaultVariant) {
+            iconInstance = defaultVariant.createInstance();
+          } else {
+            // Try to find a variant by name
+            const iconVariant = iconLibraryNode.findChild(
+              n => n.type === "COMPONENT" && n.name.toLowerCase().includes(defaultIconName)
+            ) as ComponentNode | null;
+            if (iconVariant) {
+              iconInstance = iconVariant.createInstance();
+            }
+          }
+        } else if (iconLibraryNode.type === "COMPONENT") {
+          iconInstance = (iconLibraryNode as ComponentNode).createInstance();
+        } else if (iconLibraryNode.type === "FRAME") {
+          // It might be a frame containing icon components - search within
+          const iconComponent = (iconLibraryNode as FrameNode).findOne(
+            n => n.type === "COMPONENT" && n.name.toLowerCase().includes(defaultIconName)
+          ) as ComponentNode | null;
+          if (iconComponent) {
+            iconInstance = iconComponent.createInstance();
+          }
+        }
+      }
+    } catch (error) {
+      console.warn(`Could not find icon library node ${slot.iconLibraryNodeId}:`, error);
+    }
+  }
+
+  // If we couldn't create an instance, search for icon components on the page
+  if (!iconInstance) {
+    const iconComponent = figma.currentPage.findOne(
+      n => n.type === "COMPONENT" && n.name.toLowerCase().includes(defaultIconName)
+    ) as ComponentNode | null;
+    
+    if (iconComponent) {
+      iconInstance = iconComponent.createInstance();
+    }
+  }
+
+  // If we have an icon instance, configure and return it
+  if (iconInstance) {
+    iconInstance.resize(width, height);
+    iconInstance.name = slot.name;
+    
+    // Set visibility based on isOptional (default to hidden if optional)
+    if (slot.isOptional) {
+      iconInstance.visible = false;
+    }
+    
+    // Store metadata for instance swap
+    iconInstance.setPluginData("isIconSlot", "true");
+    if (slot.iconLibraryNodeId) {
+      iconInstance.setPluginData("iconLibraryNodeId", slot.iconLibraryNodeId);
+    }
+    if (slot.linkedBooleanProperty) {
+      iconInstance.setPluginData("linkedBooleanProperty", slot.linkedBooleanProperty);
+    }
+    
+    return iconInstance;
+  }
+
+  // Fallback: Create a placeholder frame if no icon component found
+  const frame = figma.createFrame();
+  frame.resize(width, height);
+  frame.name = slot.name;
+  
+  // Style as a visible placeholder (light gray with icon indicator)
+  frame.fills = [{ type: "SOLID", color: { r: 0.9, g: 0.9, b: 0.9 } }];
+  frame.cornerRadius = 2;
+  
+  // Fixed sizing for icons
+  frame.layoutSizingHorizontal = "FIXED";
+  frame.layoutSizingVertical = "FIXED";
+  
+  // Set visibility based on isOptional
+  if (slot.isOptional) {
+    frame.visible = false;
+  }
+  
+  // Store metadata for later instance swap
+  frame.setPluginData("isIconSlot", "true");
+  frame.setPluginData("isPlaceholder", "true");
+  if (slot.iconLibraryNodeId) {
+    frame.setPluginData("iconLibraryNodeId", slot.iconLibraryNodeId);
+  }
+  if (slot.linkedBooleanProperty) {
+    frame.setPluginData("linkedBooleanProperty", slot.linkedBooleanProperty);
+  }
+  
+  return frame;
 }
 
 /**

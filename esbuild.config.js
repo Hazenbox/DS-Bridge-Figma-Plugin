@@ -17,26 +17,26 @@ const codeConfig = {
 };
 
 // Build UI code (runs in iframe - has DOM APIs)
+// We write to a temp file then inline it into HTML
 const uiConfig = {
   entryPoints: ["src/ui/index.tsx"],
   bundle: true,
-  outfile: "dist/ui.js",
-  target: "es2020",
+  write: false,
+  target: "es2017",
   format: "iife",
   minify: !isWatch,
-  sourcemap: isWatch ? "inline" : false,
   loader: {
     ".tsx": "tsx",
     ".ts": "ts",
-    ".css": "css",
+    ".css": "text",
   },
   define: {
     "process.env.NODE_ENV": isWatch ? '"development"' : '"production"',
   },
 };
 
-// HTML template for UI
-const htmlTemplate = `<!DOCTYPE html>
+function generateHtml(jsCode, cssCode) {
+  return `<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -50,13 +50,15 @@ const htmlTemplate = `<!DOCTYPE html>
       color: #333;
       background: #fff;
     }
+    ${cssCode}
   </style>
 </head>
 <body>
   <div id="root"></div>
-  <script src="ui.js"></script>
+  <script>${jsCode}</script>
 </body>
 </html>`;
+}
 
 async function build() {
   try {
@@ -65,22 +67,32 @@ async function build() {
       fs.mkdirSync("dist");
     }
 
-    // Write HTML file
-    fs.writeFileSync("dist/ui.html", htmlTemplate);
-    console.log("✓ Generated ui.html");
+    // Build main plugin code
+    await esbuild.build(codeConfig);
+    console.log("✓ Built code.js");
+
+    // Build UI and get the output
+    const uiResult = await esbuild.build(uiConfig);
+    const jsCode = uiResult.outputFiles[0].text;
+    
+    // Read CSS file
+    let cssCode = "";
+    try {
+      cssCode = fs.readFileSync("src/ui/styles.css", "utf8");
+    } catch (e) {
+      console.log("No styles.css found, continuing without styles");
+    }
+
+    // Generate HTML with inlined JS and CSS
+    const html = generateHtml(jsCode, cssCode);
+    fs.writeFileSync("dist/ui.html", html);
+    console.log("✓ Generated ui.html with inlined JS");
 
     if (isWatch) {
-      // Watch mode
-      const codeCtx = await esbuild.context(codeConfig);
-      const uiCtx = await esbuild.context(uiConfig);
-
-      await Promise.all([codeCtx.watch(), uiCtx.watch()]);
-      console.log("👀 Watching for changes...");
-    } else {
-      // Single build
-      await Promise.all([esbuild.build(codeConfig), esbuild.build(uiConfig)]);
-      console.log("✓ Build complete");
+      console.log("👀 Watch mode not fully supported, run build again after changes");
     }
+    
+    console.log("✓ Build complete");
   } catch (error) {
     console.error("Build failed:", error);
     process.exit(1);

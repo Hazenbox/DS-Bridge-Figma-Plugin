@@ -17,13 +17,13 @@ export async function createVariableCollections(
 ): Promise<Map<string, Variable>> {
   const variableMap = new Map<string, Variable>();
 
-  const existingCollections = figma.variables.getLocalVariableCollections();
+  const existingCollections = await figma.variables.getLocalVariableCollectionsAsync();
   const existingCollectionsByName = new Map<string, VariableCollection>();
   for (const c of existingCollections) {
     existingCollectionsByName.set(c.name, c);
   }
 
-  const existingVariables = figma.variables.getLocalVariables();
+  const existingVariables = await figma.variables.getLocalVariablesAsync();
   const existingVarsByCollectionAndName = new Map<string, Variable>();
   for (const v of existingVariables) {
     existingVarsByCollectionAndName.set(`${v.variableCollectionId}/${v.name}`, v);

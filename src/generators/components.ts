@@ -395,17 +395,26 @@ function createFallbackPlusIcon(
   
   // Apply color variable to strokes if provided
   if (colorVariable) {
-    const boundStroke = figma.variables.setBoundVariableForPaint(
-      { type: "SOLID", color: { r: 0, g: 0, b: 0 } },
-      "color",
-      colorVariable
-    );
-    hLine.strokes = [boundStroke];
-    vLine.strokes = [boundStroke];
+    try {
+      const boundStroke = figma.variables.setBoundVariableForPaint(
+        { type: "SOLID", color: { r: 1, g: 1, b: 1 } },
+        "color",
+        colorVariable
+      );
+      hLine.strokes = [boundStroke];
+      vLine.strokes = [boundStroke];
+      console.log(`Applied color variable "${colorVariable.name}" to fallback icon strokes`);
+    } catch (error) {
+      console.warn(`Failed to bind color variable to icon strokes:`, error);
+      // Fallback to white stroke (visible on dark backgrounds)
+      hLine.strokes = [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }];
+      vLine.strokes = [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }];
+    }
   } else {
-    // Default to black stroke
-    hLine.strokes = [{ type: "SOLID", color: { r: 0, g: 0, b: 0 } }];
-    vLine.strokes = [{ type: "SOLID", color: { r: 0, g: 0, b: 0 } }];
+    // Default to white stroke (visible on dark Figma canvas)
+    hLine.strokes = [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }];
+    vLine.strokes = [{ type: "SOLID", color: { r: 1, g: 1, b: 1 } }];
+    console.log(`No color variable provided, using white stroke for fallback icon`);
   }
   
   frame.appendChild(hLine);
@@ -526,11 +535,22 @@ async function createIconSlot(
 
   // Fallback: Create a plus icon as placeholder when no icon component found
   console.log(`Creating fallback plus icon for "${slot.name}" (no icon component found)`);
+  console.log(`  textFillVariableName: "${textFillVariableName}"`);
+  console.log(`  variableMap has ${variableMap.size} entries`);
   
   // Get color variable for the icon strokes
   const colorVariable = textFillVariableName 
     ? variableMap.get(textFillVariableName) 
     : undefined;
+  
+  if (textFillVariableName && !colorVariable) {
+    console.warn(`  WARNING: Color variable "${textFillVariableName}" not found in variableMap!`);
+    // Debug: List some keys from the map
+    const keys = Array.from(variableMap.keys()).slice(0, 10);
+    console.log(`  Sample variableMap keys: ${keys.join(", ")}`);
+  } else if (colorVariable) {
+    console.log(`  Found color variable: ${colorVariable.name}`);
+  }
   
   // Create the fallback plus icon with color binding
   const frame = createFallbackPlusIcon(width, height, colorVariable);

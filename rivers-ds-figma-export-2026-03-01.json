@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "exportedAt": "2026-03-01T19:35:08.139Z",
+  "exportedAt": "2026-03-01T20:12:06.769Z",
   "source": "rivers-ds",
   "variableCollections": [
     {
@@ -848,6 +848,19 @@
           "codePath": "--spacing-6"
         },
         {
+          "id": "rivers-ds-spacing/7",
+          "name": "spacing/7",
+          "type": "FLOAT",
+          "description": "Spacing: 28px",
+          "valuesByMode": {
+            "Default": 28
+          },
+          "scopes": [
+            "ALL_SCOPES"
+          ],
+          "codePath": "--spacing-7"
+        },
+        {
           "id": "rivers-ds-spacing/8",
           "name": "spacing/8",
           "type": "FLOAT",
@@ -859,6 +872,19 @@
             "ALL_SCOPES"
           ],
           "codePath": "--spacing-8"
+        },
+        {
+          "id": "rivers-ds-spacing/9",
+          "name": "spacing/9",
+          "type": "FLOAT",
+          "description": "Spacing: 36px",
+          "valuesByMode": {
+            "Default": 36
+          },
+          "scopes": [
+            "ALL_SCOPES"
+          ],
+          "codePath": "--spacing-9"
         },
         {
           "id": "rivers-ds-spacing/10",
@@ -1107,9 +1133,9 @@
           "id": "rivers-ds-typography/lineHeight-tight",
           "name": "typography/lineHeight-tight",
           "type": "FLOAT",
-          "description": "Line height: 1.25",
+          "description": "Line height: 125%",
           "valuesByMode": {
-            "Default": 1.25
+            "Default": 125
           },
           "scopes": [
             "LINE_HEIGHT"
@@ -1120,9 +1146,9 @@
           "id": "rivers-ds-typography/lineHeight-normal",
           "name": "typography/lineHeight-normal",
           "type": "FLOAT",
-          "description": "Line height: 1.5",
+          "description": "Line height: 150%",
           "valuesByMode": {
-            "Default": 1.5
+            "Default": 150
           },
           "scopes": [
             "LINE_HEIGHT"
@@ -1133,9 +1159,9 @@
           "id": "rivers-ds-typography/lineHeight-relaxed",
           "name": "typography/lineHeight-relaxed",
           "type": "FLOAT",
-          "description": "Line height: 1.75",
+          "description": "Line height: 175%",
           "valuesByMode": {
-            "Default": 1.75
+            "Default": 175
           },
           "scopes": [
             "LINE_HEIGHT"
@@ -1597,10 +1623,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
-            "fontSize": "typography/fontSize-xs"
+            "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm"
           }
         },
         {
@@ -1613,10 +1642,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "hover"
           }
         },
@@ -1630,10 +1662,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "focus"
           }
         },
@@ -1647,10 +1682,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "active"
           }
         },
@@ -1664,10 +1702,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "opacity": "opacity/disabled"
           }
         },
@@ -1681,10 +1722,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs"
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm"
           }
         },
         {
@@ -1697,10 +1741,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "hover"
           }
         },
@@ -1714,10 +1761,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "focus"
           }
         },
@@ -1731,10 +1781,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "active"
           }
         },
@@ -1748,10 +1801,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "opacity": "opacity/disabled"
           }
         },
@@ -1765,10 +1821,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm"
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size"
           }
         },
         {
@@ -1781,10 +1840,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "hover"
           }
         },
@@ -1798,10 +1860,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "focus"
           }
         },
@@ -1815,10 +1880,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "active"
           }
         },
@@ -1832,10 +1900,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "opacity": "opacity/disabled"
           }
         },
@@ -1849,10 +1920,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm"
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg"
           }
         },
         {
@@ -1865,10 +1939,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "hover"
           }
         },
@@ -1882,10 +1959,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "focus"
           }
         },
@@ -1899,10 +1979,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "active"
           }
         },
@@ -1916,10 +1999,13 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "opacity": "opacity/disabled"
           }
         },
@@ -1933,8 +2019,12 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/9",
-            "width": "spacing/9"
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true"
           }
         },
         {
@@ -1947,8 +2037,12 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -1962,8 +2056,12 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -1977,8 +2075,12 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -1992,8 +2094,12 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -2008,7 +2114,11 @@
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
             "height": "spacing/6",
-            "width": "spacing/6"
+            "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true"
           }
         },
         {
@@ -2023,6 +2133,10 @@
             "textFill": "colors/primary-foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -2038,6 +2152,10 @@
             "textFill": "colors/primary-foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -2053,6 +2171,10 @@
             "textFill": "colors/primary-foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -2068,6 +2190,10 @@
             "textFill": "colors/primary-foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -2081,8 +2207,12 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/8",
-            "width": "spacing/8"
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true"
           }
         },
         {
@@ -2095,8 +2225,12 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -2110,8 +2244,12 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -2125,8 +2263,12 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -2140,8 +2282,12 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -2155,8 +2301,12 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/10",
-            "width": "spacing/10"
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true"
           }
         },
         {
@@ -2169,8 +2319,12 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -2184,8 +2338,12 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -2199,8 +2357,12 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -2214,8 +2376,12 @@
           "tokenBindings": {
             "fill": "colors/primary",
             "textFill": "colors/primary-foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -2229,10 +2395,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
-            "fontSize": "typography/fontSize-xs"
+            "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm"
           }
         },
         {
@@ -2245,10 +2414,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "hover"
           }
         },
@@ -2262,10 +2434,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "focus"
           }
         },
@@ -2279,10 +2454,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "active"
           }
         },
@@ -2296,10 +2474,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "opacity": "opacity/disabled"
           }
         },
@@ -2313,10 +2494,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs"
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm"
           }
         },
         {
@@ -2329,10 +2513,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "hover"
           }
         },
@@ -2346,10 +2533,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "focus"
           }
         },
@@ -2363,10 +2553,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "active"
           }
         },
@@ -2380,10 +2573,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "opacity": "opacity/disabled"
           }
         },
@@ -2397,10 +2593,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm"
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size"
           }
         },
         {
@@ -2413,10 +2612,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "hover"
           }
         },
@@ -2430,10 +2632,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "focus"
           }
         },
@@ -2447,10 +2652,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "active"
           }
         },
@@ -2464,10 +2672,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "opacity": "opacity/disabled"
           }
         },
@@ -2481,10 +2692,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm"
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg"
           }
         },
         {
@@ -2497,10 +2711,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "hover"
           }
         },
@@ -2514,10 +2731,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "focus"
           }
         },
@@ -2531,10 +2751,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "active"
           }
         },
@@ -2548,10 +2771,13 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "opacity": "opacity/disabled"
           }
         },
@@ -2565,8 +2791,12 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/9",
-            "width": "spacing/9"
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true"
           }
         },
         {
@@ -2579,8 +2809,12 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -2594,8 +2828,12 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -2609,8 +2847,12 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -2624,8 +2866,12 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -2640,7 +2886,11 @@
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
             "height": "spacing/6",
-            "width": "spacing/6"
+            "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true"
           }
         },
         {
@@ -2655,6 +2905,10 @@
             "textFill": "colors/destructive-foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -2670,6 +2924,10 @@
             "textFill": "colors/destructive-foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -2685,6 +2943,10 @@
             "textFill": "colors/destructive-foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -2700,6 +2962,10 @@
             "textFill": "colors/destructive-foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -2713,8 +2979,12 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/8",
-            "width": "spacing/8"
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true"
           }
         },
         {
@@ -2727,8 +2997,12 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -2742,8 +3016,12 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -2757,8 +3035,12 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -2772,8 +3054,12 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -2787,8 +3073,12 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/10",
-            "width": "spacing/10"
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true"
           }
         },
         {
@@ -2801,8 +3091,12 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -2816,8 +3110,12 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -2831,8 +3129,12 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -2846,8 +3148,12 @@
           "tokenBindings": {
             "fill": "colors/destructive",
             "textFill": "colors/destructive-foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -2862,10 +3168,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
-            "fontSize": "typography/fontSize-xs"
+            "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm"
           }
         },
         {
@@ -2879,10 +3188,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "hover"
           }
         },
@@ -2897,10 +3209,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "focus"
           }
         },
@@ -2915,10 +3230,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "active"
           }
         },
@@ -2933,10 +3251,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "opacity": "opacity/disabled"
           }
         },
@@ -2951,10 +3272,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs"
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm"
           }
         },
         {
@@ -2968,10 +3292,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "hover"
           }
         },
@@ -2986,10 +3313,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "focus"
           }
         },
@@ -3004,10 +3334,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "active"
           }
         },
@@ -3022,10 +3355,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "opacity": "opacity/disabled"
           }
         },
@@ -3040,10 +3376,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm"
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size"
           }
         },
         {
@@ -3057,10 +3396,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "hover"
           }
         },
@@ -3075,10 +3417,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "focus"
           }
         },
@@ -3093,10 +3438,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "active"
           }
         },
@@ -3111,10 +3459,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "opacity": "opacity/disabled"
           }
         },
@@ -3129,10 +3480,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm"
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg"
           }
         },
         {
@@ -3146,10 +3500,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "hover"
           }
         },
@@ -3164,10 +3521,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "focus"
           }
         },
@@ -3182,10 +3542,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "active"
           }
         },
@@ -3200,10 +3563,13 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "opacity": "opacity/disabled"
           }
         },
@@ -3218,8 +3584,12 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/9",
-            "width": "spacing/9"
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true"
           }
         },
         {
@@ -3233,8 +3603,12 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -3249,8 +3623,12 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -3265,8 +3643,12 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -3281,8 +3663,12 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -3298,7 +3684,11 @@
             "textFill": "colors/foreground",
             "stroke": "colors/border",
             "height": "spacing/6",
-            "width": "spacing/6"
+            "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true"
           }
         },
         {
@@ -3314,6 +3704,10 @@
             "stroke": "colors/border",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -3330,6 +3724,10 @@
             "stroke": "colors/border",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -3346,6 +3744,10 @@
             "stroke": "colors/border",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -3362,6 +3764,10 @@
             "stroke": "colors/border",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -3376,8 +3782,12 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/8",
-            "width": "spacing/8"
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true"
           }
         },
         {
@@ -3391,8 +3801,12 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -3407,8 +3821,12 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -3423,8 +3841,12 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -3439,8 +3861,12 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -3455,8 +3881,12 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/10",
-            "width": "spacing/10"
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true"
           }
         },
         {
@@ -3470,8 +3900,12 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -3486,8 +3920,12 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -3502,8 +3940,12 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -3518,8 +3960,12 @@
             "fill": "colors/background",
             "textFill": "colors/foreground",
             "stroke": "colors/border",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -3533,10 +3979,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
-            "fontSize": "typography/fontSize-xs"
+            "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm"
           }
         },
         {
@@ -3549,10 +3998,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "hover"
           }
         },
@@ -3566,10 +4018,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "focus"
           }
         },
@@ -3583,10 +4038,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "active"
           }
         },
@@ -3600,10 +4058,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "opacity": "opacity/disabled"
           }
         },
@@ -3617,10 +4078,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs"
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm"
           }
         },
         {
@@ -3633,10 +4097,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "hover"
           }
         },
@@ -3650,10 +4117,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "focus"
           }
         },
@@ -3667,10 +4137,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "active"
           }
         },
@@ -3684,10 +4157,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "opacity": "opacity/disabled"
           }
         },
@@ -3701,10 +4177,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm"
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size"
           }
         },
         {
@@ -3717,10 +4196,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "hover"
           }
         },
@@ -3734,10 +4216,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "focus"
           }
         },
@@ -3751,10 +4236,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "active"
           }
         },
@@ -3768,10 +4256,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "opacity": "opacity/disabled"
           }
         },
@@ -3785,10 +4276,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm"
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg"
           }
         },
         {
@@ -3801,10 +4295,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "hover"
           }
         },
@@ -3818,10 +4315,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "focus"
           }
         },
@@ -3835,10 +4335,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "active"
           }
         },
@@ -3852,10 +4355,13 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "opacity": "opacity/disabled"
           }
         },
@@ -3869,8 +4375,12 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/9",
-            "width": "spacing/9"
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true"
           }
         },
         {
@@ -3883,8 +4393,12 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -3898,8 +4412,12 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -3913,8 +4431,12 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -3928,8 +4450,12 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -3944,7 +4470,11 @@
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
             "height": "spacing/6",
-            "width": "spacing/6"
+            "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true"
           }
         },
         {
@@ -3959,6 +4489,10 @@
             "textFill": "colors/secondary-foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -3974,6 +4508,10 @@
             "textFill": "colors/secondary-foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -3989,6 +4527,10 @@
             "textFill": "colors/secondary-foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -4004,6 +4546,10 @@
             "textFill": "colors/secondary-foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -4017,8 +4563,12 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/8",
-            "width": "spacing/8"
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true"
           }
         },
         {
@@ -4031,8 +4581,12 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -4046,8 +4600,12 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -4061,8 +4619,12 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -4076,8 +4638,12 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -4091,8 +4657,12 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/10",
-            "width": "spacing/10"
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true"
           }
         },
         {
@@ -4105,8 +4675,12 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -4120,8 +4694,12 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -4135,8 +4713,12 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -4150,8 +4732,12 @@
           "tokenBindings": {
             "fill": "colors/secondary",
             "textFill": "colors/secondary-foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -4165,10 +4751,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
-            "fontSize": "typography/fontSize-xs"
+            "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm"
           }
         },
         {
@@ -4181,10 +4770,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "hover"
           }
         },
@@ -4198,10 +4790,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "focus"
           }
         },
@@ -4215,10 +4810,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "active"
           }
         },
@@ -4232,10 +4830,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "opacity": "opacity/disabled"
           }
         },
@@ -4249,10 +4850,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs"
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm"
           }
         },
         {
@@ -4265,10 +4869,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "hover"
           }
         },
@@ -4282,10 +4889,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "focus"
           }
         },
@@ -4299,10 +4909,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "active"
           }
         },
@@ -4316,10 +4929,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "opacity": "opacity/disabled"
           }
         },
@@ -4333,10 +4949,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm"
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size"
           }
         },
         {
@@ -4349,10 +4968,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "hover"
           }
         },
@@ -4366,10 +4988,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "focus"
           }
         },
@@ -4383,10 +5008,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "active"
           }
         },
@@ -4400,10 +5028,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "opacity": "opacity/disabled"
           }
         },
@@ -4417,10 +5048,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm"
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg"
           }
         },
         {
@@ -4433,10 +5067,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "hover"
           }
         },
@@ -4450,10 +5087,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "focus"
           }
         },
@@ -4467,10 +5107,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "active"
           }
         },
@@ -4484,10 +5127,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "opacity": "opacity/disabled"
           }
         },
@@ -4501,8 +5147,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/9",
-            "width": "spacing/9"
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true"
           }
         },
         {
@@ -4515,8 +5165,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -4530,8 +5184,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -4545,8 +5203,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -4560,8 +5222,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -4576,7 +5242,11 @@
             "fill": "__none__",
             "textFill": "colors/foreground",
             "height": "spacing/6",
-            "width": "spacing/6"
+            "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true"
           }
         },
         {
@@ -4591,6 +5261,10 @@
             "textFill": "colors/foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -4606,6 +5280,10 @@
             "textFill": "colors/foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -4621,6 +5299,10 @@
             "textFill": "colors/foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -4636,6 +5318,10 @@
             "textFill": "colors/foreground",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -4649,8 +5335,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/8",
-            "width": "spacing/8"
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true"
           }
         },
         {
@@ -4663,8 +5353,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -4678,8 +5372,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -4693,8 +5391,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -4708,8 +5410,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -4723,8 +5429,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/10",
-            "width": "spacing/10"
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true"
           }
         },
         {
@@ -4737,8 +5447,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -4752,8 +5466,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -4767,8 +5485,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -4782,8 +5504,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/foreground",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -4797,10 +5523,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
-            "fontSize": "typography/fontSize-xs"
+            "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm"
           }
         },
         {
@@ -4813,10 +5542,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "hover"
           }
         },
@@ -4830,10 +5562,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "focus"
           }
         },
@@ -4847,10 +5582,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "active"
           }
         },
@@ -4864,10 +5602,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/7",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/2",
             "paddingRight": "spacing/2",
             "fontSize": "typography/fontSize-xs",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "opacity": "opacity/disabled"
           }
         },
@@ -4881,10 +5622,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs"
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm"
           }
         },
         {
@@ -4897,10 +5641,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "hover"
           }
         },
@@ -4914,10 +5661,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "focus"
           }
         },
@@ -4931,10 +5681,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "_state": "active"
           }
         },
@@ -4948,10 +5701,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/8",
+            "height": "density/control-height-sm",
             "paddingLeft": "spacing/3",
             "paddingRight": "spacing/3",
-            "fontSize": "typography/fontSize-xs",
+            "fontSize": "typography/fontSize-sm",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-tight",
+            "iconSize": "density/icon-size-sm",
             "opacity": "opacity/disabled"
           }
         },
@@ -4965,10 +5721,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm"
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size"
           }
         },
         {
@@ -4981,10 +5740,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "hover"
           }
         },
@@ -4998,10 +5760,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "focus"
           }
         },
@@ -5015,10 +5780,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "_state": "active"
           }
         },
@@ -5032,10 +5800,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/9",
+            "height": "density/control-height",
             "paddingLeft": "spacing/4",
             "paddingRight": "spacing/4",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-base",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size",
             "opacity": "opacity/disabled"
           }
         },
@@ -5049,10 +5820,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm"
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg"
           }
         },
         {
@@ -5065,10 +5839,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "hover"
           }
         },
@@ -5082,10 +5859,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "focus"
           }
         },
@@ -5099,10 +5879,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "_state": "active"
           }
         },
@@ -5116,10 +5899,13 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/10",
+            "height": "density/control-height-lg",
             "paddingLeft": "spacing/6",
             "paddingRight": "spacing/6",
-            "fontSize": "typography/fontSize-sm",
+            "fontSize": "typography/fontSize-md",
+            "fontWeight": "typography/fontWeight-medium",
+            "lineHeight": "typography/lineHeight-normal",
+            "iconSize": "density/icon-size-lg",
             "opacity": "opacity/disabled"
           }
         },
@@ -5133,8 +5919,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/9",
-            "width": "spacing/9"
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true"
           }
         },
         {
@@ -5147,8 +5937,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -5162,8 +5956,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -5177,8 +5975,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -5192,8 +5994,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/9",
-            "width": "spacing/9",
+            "height": "density/control-height",
+            "width": "density/control-height",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -5208,7 +6014,11 @@
             "fill": "__none__",
             "textFill": "colors/primary",
             "height": "spacing/6",
-            "width": "spacing/6"
+            "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true"
           }
         },
         {
@@ -5223,6 +6033,10 @@
             "textFill": "colors/primary",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -5238,6 +6052,10 @@
             "textFill": "colors/primary",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -5253,6 +6071,10 @@
             "textFill": "colors/primary",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -5268,6 +6090,10 @@
             "textFill": "colors/primary",
             "height": "spacing/6",
             "width": "spacing/6",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -5281,8 +6107,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/8",
-            "width": "spacing/8"
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true"
           }
         },
         {
@@ -5295,8 +6125,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -5310,8 +6144,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -5325,8 +6163,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -5340,8 +6182,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/8",
-            "width": "spacing/8",
+            "height": "density/control-height-sm",
+            "width": "density/control-height-sm",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-sm",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         },
@@ -5355,8 +6201,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/10",
-            "width": "spacing/10"
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true"
           }
         },
         {
@@ -5369,8 +6219,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "hover"
           }
         },
@@ -5384,8 +6238,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "focus"
           }
         },
@@ -5399,8 +6257,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "_state": "active"
           }
         },
@@ -5414,8 +6276,12 @@
           "tokenBindings": {
             "fill": "__none__",
             "textFill": "colors/primary",
-            "height": "spacing/10",
-            "width": "spacing/10",
+            "height": "density/control-height-lg",
+            "width": "density/control-height-lg",
+            "paddingLeft": "spacing/0",
+            "paddingRight": "spacing/0",
+            "iconSize": "density/icon-size-lg",
+            "hideLabel": "true",
             "opacity": "opacity/disabled"
           }
         }
@@ -5480,6 +6346,7 @@
           "primaryAxisAlignItems": "CENTER",
           "counterAxisAlignItems": "CENTER",
           "variableBindings": {
+            "fontFamily": "fonts/ui",
             "fontSize": "typography/fontSize-sm",
             "fontWeight": "typography/fontWeight-medium",
             "lineHeight": "typography/lineHeight-normal"
@@ -5516,90 +6383,90 @@
   "textStyles": [
     {
       "name": "Heading/H1",
-      "fontFamily": "Inter",
+      "fontFamily": "Geist",
       "fontStyle": "Bold",
       "fontSize": 36,
-      "lineHeight": 40,
+      "lineHeight": 111,
       "letterSpacing": -0.5
     },
     {
       "name": "Heading/H2",
-      "fontFamily": "Inter",
+      "fontFamily": "Geist",
       "fontStyle": "SemiBold",
       "fontSize": 30,
-      "lineHeight": 36,
+      "lineHeight": 120,
       "letterSpacing": -0.25
     },
     {
       "name": "Heading/H3",
-      "fontFamily": "Inter",
+      "fontFamily": "Geist",
       "fontStyle": "SemiBold",
       "fontSize": 24,
-      "lineHeight": 32,
+      "lineHeight": 133,
       "letterSpacing": 0
     },
     {
       "name": "Heading/H4",
-      "fontFamily": "Inter",
+      "fontFamily": "Geist",
       "fontStyle": "Medium",
       "fontSize": 20,
-      "lineHeight": 28,
+      "lineHeight": 140,
       "letterSpacing": 0
     },
     {
       "name": "Body/Large",
-      "fontFamily": "Inter",
+      "fontFamily": "Geist",
       "fontStyle": "Regular",
       "fontSize": 18,
-      "lineHeight": 28,
+      "lineHeight": 156,
       "letterSpacing": 0
     },
     {
       "name": "Body/Default",
-      "fontFamily": "Inter",
+      "fontFamily": "Geist",
       "fontStyle": "Regular",
       "fontSize": 16,
-      "lineHeight": 24,
+      "lineHeight": 150,
       "letterSpacing": 0
     },
     {
       "name": "Body/Small",
-      "fontFamily": "Inter",
+      "fontFamily": "Geist",
       "fontStyle": "Regular",
       "fontSize": 14,
-      "lineHeight": 20,
+      "lineHeight": 143,
       "letterSpacing": 0
     },
     {
       "name": "Label/Default",
-      "fontFamily": "Inter",
+      "fontFamily": "Geist",
       "fontStyle": "Medium",
       "fontSize": 14,
-      "lineHeight": 20,
+      "lineHeight": 143,
       "letterSpacing": 0
     },
     {
       "name": "Label/Small",
-      "fontFamily": "Inter",
+      "fontFamily": "Geist",
       "fontStyle": "Medium",
       "fontSize": 12,
-      "lineHeight": 16,
+      "lineHeight": 133,
       "letterSpacing": 0
     },
     {
       "name": "Code/Default",
-      "fontFamily": "JetBrains Mono",
+      "fontFamily": "Geist Mono",
       "fontStyle": "Regular",
       "fontSize": 14,
-      "lineHeight": 20,
+      "lineHeight": 143,
       "letterSpacing": 0
     },
     {
       "name": "Code/Small",
-      "fontFamily": "JetBrains Mono",
+      "fontFamily": "Geist Mono",
       "fontStyle": "Regular",
       "fontSize": 12,
-      "lineHeight": 16,
+      "lineHeight": 133,
       "letterSpacing": 0
     }
   ],

@@ -270,15 +270,19 @@ async function createSingleComponent(
         continue;
       }
       
-      const childNode = await createSlotNode(childSlot, variableMap, variant.tokenBindings);
+      // For icon-only variants, force the left icon to be visible
+      const isLeftIcon = childSlot.type === "ICON" && 
+                         (childSlot.name === "Left Icon" || childSlot.id === "iconLeft");
+      const forceIconVisible = isIconOnly && isLeftIcon;
+      
+      const childNode = await createSlotNode(
+        childSlot, 
+        variableMap, 
+        variant.tokenBindings,
+        forceIconVisible
+      );
       if (childNode) {
         component.appendChild(childNode);
-        
-        // For icon-only variants, show the left icon by default
-        if (isIconOnly && childSlot.type === "ICON" && 
-            (childSlot.name === "Left Icon" || childSlot.id === "iconLeft")) {
-          childNode.visible = true;
-        }
       }
     }
   } else {
@@ -298,11 +302,13 @@ async function createSingleComponent(
 
 /**
  * Create a node from a slot definition
+ * @param forceVisible - For icon-only variants, force the icon to be visible
  */
 async function createSlotNode(
   slot: FigmaPluginSlot,
   variableMap: Map<string, Variable>,
-  variantTokenBindings?: Record<string, string>
+  variantTokenBindings?: Record<string, string>,
+  forceVisible?: boolean
 ): Promise<SceneNode | null> {
   let node: SceneNode;
 
@@ -326,8 +332,15 @@ async function createSlotNode(
       break;
 
     case "ICON":
-      // Pass textFill from variant token bindings so icon color matches button text
-      node = await createIconSlot(slot, variableMap, variantTokenBindings?.textFill);
+      // Pass textFill and iconSize from variant token bindings
+      // forceVisible ensures icon-only buttons show the icon
+      node = await createIconSlot(
+        slot, 
+        variableMap, 
+        variantTokenBindings?.textFill,
+        variantTokenBindings?.iconSize,
+        forceVisible
+      );
       break;
 
     default:
@@ -343,11 +356,15 @@ async function createSlotNode(
 /**
  * Create an icon slot - either as an instance of an icon component or a placeholder frame
  * Icons inherit their color from the button's textFill variable to match the label color
+ * @param iconSizeVariableName - Variable to bind to icon width/height for size scaling
+ * @param forceVisible - Override isOptional to make icon visible (for icon-only buttons)
  */
 async function createIconSlot(
   slot: FigmaPluginSlot,
   variableMap: Map<string, Variable>,
-  textFillVariableName?: string
+  textFillVariableName?: string,
+  iconSizeVariableName?: string,
+  forceVisible?: boolean
 ): Promise<FrameNode | InstanceNode> {
   const width = (slot.defaults?.width as number) || 16;
   const height = (slot.defaults?.height as number) || 16;
@@ -409,6 +426,19 @@ async function createIconSlot(
     iconInstance.resize(width, height);
     iconInstance.name = slot.name;
     
+    // Bind iconSize variable to width and height for dynamic sizing per button size
+    if (iconSizeVariableName) {
+      const iconSizeVar = variableMap.get(iconSizeVariableName);
+      if (iconSizeVar) {
+        try {
+          iconInstance.setBoundVariable("width", iconSizeVar);
+          iconInstance.setBoundVariable("height", iconSizeVar);
+        } catch (error) {
+          console.warn(`Could not bind iconSize to icon instance:`, error);
+        }
+      }
+    }
+    
     // Apply textFill color variable to icon so it matches button text color
     if (textFillVariableName) {
       const colorVariable = variableMap.get(textFillVariableName);
@@ -417,10 +447,9 @@ async function createIconSlot(
       }
     }
     
-    // Set visibility based on isOptional (default to hidden if optional)
-    if (slot.isOptional) {
-      iconInstance.visible = false;
-    }
+    // Set visibility: forceVisible overrides isOptional (for icon-only buttons)
+    const shouldBeVisible = forceVisible || !slot.isOptional;
+    iconInstance.visible = shouldBeVisible;
     
     // Store metadata for instance swap
     iconInstance.setPluginData("isIconSlot", "true");
@@ -435,9 +464,23 @@ async function createIconSlot(
   }
 
   // Fallback: Create a placeholder frame if no icon component found
+  console.log(`Creating placeholder frame for icon "${slot.name}" (no icon component found)`);
   const frame = figma.createFrame();
   frame.resize(width, height);
   frame.name = slot.name;
+  
+  // Bind iconSize variable to placeholder frame as well
+  if (iconSizeVariableName) {
+    const iconSizeVar = variableMap.get(iconSizeVariableName);
+    if (iconSizeVar) {
+      try {
+        frame.setBoundVariable("width", iconSizeVar);
+        frame.setBoundVariable("height", iconSizeVar);
+      } catch (error) {
+        console.warn(`Could not bind iconSize to placeholder frame:`, error);
+      }
+    }
+  }
   
   // Apply textFill color variable to placeholder frame
   if (textFillVariableName) {
@@ -461,10 +504,9 @@ async function createIconSlot(
   frame.layoutSizingHorizontal = "FIXED";
   frame.layoutSizingVertical = "FIXED";
   
-  // Set visibility based on isOptional
-  if (slot.isOptional) {
-    frame.visible = false;
-  }
+  // Set visibility: forceVisible overrides isOptional (for icon-only buttons)
+  const shouldBeVisible = forceVisible || !slot.isOptional;
+  frame.visible = shouldBeVisible;
   
   // Store metadata for later instance swap
   frame.setPluginData("isIconSlot", "true");
@@ -678,12 +720,13 @@ async function applySlotToText(
     }
   }
 
-  // Apply typography variable bindings (fontSize, fontWeight, lineHeight, letterSpacing)
-  const typographyFields = ["fontSize", "fontWeight", "lineHeight", "letterSpacing"];
+  // Apply typography variable bindings (fontSize, fontWeight, letterSpacing)
+  // NOTE: lineHeight is handled separately with PERCENT unit
+  const typographyFieldsForBinding = ["fontSize", "fontWeight", "letterSpacing"];
   
   // First apply slot default bindings
   for (const [fieldName, variableName] of Object.entries(slot.variableBindings)) {
-    if (typographyFields.includes(fieldName) && typeof variableName === "string") {
+    if (typographyFieldsForBinding.includes(fieldName) && typeof variableName === "string") {
       const variable = variableMap.get(variableName);
       if (variable) {
         try {
@@ -699,7 +742,7 @@ async function applySlotToText(
   // This ensures each button size gets its correct fontSize, fontWeight, etc.
   if (variantTokenBindings) {
     for (const [fieldName, variableName] of Object.entries(variantTokenBindings)) {
-      if (typographyFields.includes(fieldName) && typeof variableName === "string") {
+      if (typographyFieldsForBinding.includes(fieldName) && typeof variableName === "string") {
         const variable = variableMap.get(variableName);
         if (variable) {
           try {
@@ -707,6 +750,36 @@ async function applySlotToText(
           } catch (error) {
             console.warn(`Could not bind variant ${fieldName} to text node:`, error);
           }
+        }
+      }
+    }
+  }
+  
+  // CRITICAL FIX: Handle lineHeight separately with PERCENT unit
+  // Figma interprets raw numbers as pixels when bound via setBoundVariable()
+  // We need to set lineHeight directly with { value: X, unit: "PERCENT" }
+  const lineHeightVarName = variantTokenBindings?.lineHeight || slot.variableBindings.lineHeight;
+  if (lineHeightVarName && typeof lineHeightVarName === "string") {
+    const lineHeightVar = variableMap.get(lineHeightVarName);
+    if (lineHeightVar) {
+      try {
+        // Get the variable's resolved value and apply as percentage
+        const collection = await figma.variables.getVariableCollectionByIdAsync(lineHeightVar.variableCollectionId);
+        if (collection) {
+          const value = lineHeightVar.valuesByMode[collection.defaultModeId];
+          if (typeof value === "number") {
+            // Set lineHeight directly with PERCENT unit
+            // Our exported values are already percentages (125, 150, 175)
+            textNode.lineHeight = { value: value, unit: "PERCENT" };
+          }
+        }
+      } catch (error) {
+        console.warn(`Could not set lineHeight directly:`, error);
+        // Fallback: try variable binding anyway
+        try {
+          textNode.setBoundVariable("lineHeight", lineHeightVar);
+        } catch {
+          // Ignore fallback error
         }
       }
     }
@@ -795,8 +868,16 @@ async function applyVariantTokenBindings(
         );
         frame.strokes = [boundPaint];
         frame.strokeWeight = 1;
+      } else if (fieldName === "opacity" && variable) {
+        // Explicit handling for opacity to ensure it's bound correctly
+        // Figma expects opacity values between 0 and 1 (0.5 = 50% opacity)
+        console.log(`Binding opacity variable "${variableName}" to component`);
+        frame.setBoundVariable("opacity", variable);
       } else if (variable && isBindableField(fieldName)) {
         frame.setBoundVariable(fieldName as VariableBindableNodeField, variable);
+      } else if (!variable && fieldName !== "hideLabel" && fieldName !== "iconSize") {
+        // Log missing variables (except for special fields that aren't variable names)
+        console.warn(`Variable not found for binding: ${variableName} (field: ${fieldName})`);
       }
     } catch (error) {
       console.warn(`Could not apply variant binding ${fieldName}:`, error);

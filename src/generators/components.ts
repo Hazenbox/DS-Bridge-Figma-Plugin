@@ -354,6 +354,67 @@ async function createSlotNode(
 }
 
 /**
+ * Create a fallback plus icon using Figma line primitives.
+ * This is used when no icon component is found in the file.
+ * @param width - Icon width in pixels
+ * @param height - Icon height in pixels
+ * @param colorVariable - Optional color variable to bind to the icon strokes
+ * @param variableMap - Map of variable names to Variable objects for binding
+ */
+function createFallbackPlusIcon(
+  width: number,
+  height: number,
+  colorVariable?: Variable
+): FrameNode {
+  const frame = figma.createFrame();
+  frame.resize(width, height);
+  frame.fills = [];
+  frame.clipsContent = false;
+  
+  // Calculate padding and stroke weight based on icon size
+  const padding = Math.round(width * 0.2);
+  const strokeWeight = Math.max(1.5, Math.round(width / 8));
+  const lineLength = width - padding * 2;
+  
+  // Create horizontal line of the plus
+  const hLine = figma.createLine();
+  hLine.resize(lineLength, 0);
+  hLine.x = padding;
+  hLine.y = height / 2;
+  hLine.strokeWeight = strokeWeight;
+  hLine.strokeCap = "ROUND";
+  
+  // Create vertical line of the plus
+  const vLine = figma.createLine();
+  vLine.resize(lineLength, 0);
+  vLine.x = width / 2;
+  vLine.y = padding;
+  vLine.rotation = 90;
+  vLine.strokeWeight = strokeWeight;
+  vLine.strokeCap = "ROUND";
+  
+  // Apply color variable to strokes if provided
+  if (colorVariable) {
+    const boundStroke = figma.variables.setBoundVariableForPaint(
+      { type: "SOLID", color: { r: 0, g: 0, b: 0 } },
+      "color",
+      colorVariable
+    );
+    hLine.strokes = [boundStroke];
+    vLine.strokes = [boundStroke];
+  } else {
+    // Default to black stroke
+    hLine.strokes = [{ type: "SOLID", color: { r: 0, g: 0, b: 0 } }];
+    vLine.strokes = [{ type: "SOLID", color: { r: 0, g: 0, b: 0 } }];
+  }
+  
+  frame.appendChild(hLine);
+  frame.appendChild(vLine);
+  
+  return frame;
+}
+
+/**
  * Create an icon slot - either as an instance of an icon component or a placeholder frame
  * Icons inherit their color from the button's textFill variable to match the label color
  * @param iconSizeVariableName - Variable to bind to icon width/height for size scaling
@@ -463,13 +524,19 @@ async function createIconSlot(
     return iconInstance;
   }
 
-  // Fallback: Create a placeholder frame if no icon component found
-  console.log(`Creating placeholder frame for icon "${slot.name}" (no icon component found)`);
-  const frame = figma.createFrame();
-  frame.resize(width, height);
+  // Fallback: Create a plus icon as placeholder when no icon component found
+  console.log(`Creating fallback plus icon for "${slot.name}" (no icon component found)`);
+  
+  // Get color variable for the icon strokes
+  const colorVariable = textFillVariableName 
+    ? variableMap.get(textFillVariableName) 
+    : undefined;
+  
+  // Create the fallback plus icon with color binding
+  const frame = createFallbackPlusIcon(width, height, colorVariable);
   frame.name = slot.name;
   
-  // Bind iconSize variable to placeholder frame as well
+  // Bind iconSize variable to the frame for dynamic sizing per button size
   if (iconSizeVariableName) {
     const iconSizeVar = variableMap.get(iconSizeVariableName);
     if (iconSizeVar) {
@@ -477,30 +544,12 @@ async function createIconSlot(
         frame.setBoundVariable("width", iconSizeVar);
         frame.setBoundVariable("height", iconSizeVar);
       } catch (error) {
-        console.warn(`Could not bind iconSize to placeholder frame:`, error);
+        console.warn(`Could not bind iconSize to fallback icon frame:`, error);
       }
     }
   }
   
-  // Apply textFill color variable to placeholder frame
-  if (textFillVariableName) {
-    const colorVariable = variableMap.get(textFillVariableName);
-    if (colorVariable) {
-      const solidPaint = figma.util.solidPaint("#000000");
-      const boundPaint = figma.variables.setBoundVariableForPaint(
-        solidPaint,
-        "color",
-        colorVariable
-      );
-      frame.fills = [boundPaint];
-    }
-  } else {
-    // Style as a visible placeholder (light gray with icon indicator)
-    frame.fills = [{ type: "SOLID", color: { r: 0.9, g: 0.9, b: 0.9 } }];
-  }
-  frame.cornerRadius = 2;
-  
-  // Fixed sizing for icons
+  // Fixed sizing for icons within auto-layout
   frame.layoutSizingHorizontal = "FIXED";
   frame.layoutSizingVertical = "FIXED";
   
